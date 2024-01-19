@@ -1,0 +1,41 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - eslint:recommended
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+rules:
+  indent:
+    - error
+    - 4
+  linebreak-style:
+    - error
+    - windows
+  quotes:
+    - off
+    - backtick
+  semi:
+    - off
+    - always
+  no-unused-vars:
+    - warn
+  no-undef:
+    - error
+  no-unsafe-finally:
+    - off
+  no-useless-escape:
+    - off
+  no-cond-assign:
+    - off
+  no-func-assign:
+    - off
+  no-prototype-builtins:
+    - off
+  no-control-regex:
+    - 0
+  no-empty:
+    - 0
+  no-self-assign:
+    - 0

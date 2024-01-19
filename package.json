@@ -1,0 +1,26 @@
+{
+  "name": "applying-jobs-notification",
+  "version": "0.0.1",
+  "description": "ATS clone ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"no test yet\"",
+    "start:dev": "nodemon index.js"
+  },
+  "author": "Fatkhur Rozak",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "foundation-sites": "^6.8.1",
+    "webpack": "^5.89.0"
+  },
+  "devDependencies": {
+    "css-loader": "^6.9.1",
+    "eslint": "^8.56.0",
+    "nodemon": "^3.0.2",
+    "style-loader": "^3.3.4",
+    "webpack-cli": "^5.1.4"
+  }
+}
