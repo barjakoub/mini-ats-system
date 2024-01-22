@@ -4,12 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATS - Home</title>
+    <title>
+        <%= pageTitle %>
+    </title>
+    <!-- <link rel="stylesheet" href="/xbcvbx/css/app.css"> -->
 </head>
 
 <body>
-    <!-- foundation style bundle source:! -->
-    <script src="http://localhost:8080/bundle_results/foundation-bundle.js"></script>
+    <h1>
+        New Page Configuration:!
+    </h1>
+    <header>
+        <h4>Dropdown Menu</h4>
+        <ul class="dropdown menu" data-dropdown-menu>
+            <li>
+                <a href="#">Item 1</a>
+                <ul class="menu">
+                    <li><a href="#">Item 1A</a></li>
+                    <!-- ... -->
+                </ul>
+            </li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 4</a></li>
+        </ul>
+        <h4>Accordion Menu</h4>
+        <ul class="vertical menu accordion-menu" data-accordion-menu>
+            <li>
+                <a href="#">Item 1</a>
+                <ul class="menu vertical nested">
+                    <li><a href="#">Item 1A</a></li>
+                    <li><a href="#">Item 1B</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Item 2</a></li>
+        </ul>
+        <%- defineContent('navigation') %>
+            <button type="button" class="button radius bordered shadow primary">Primary</button>
+            <button type="button" class="button rounded bordered shadow secondary">Secondary</button>
+            <button type="button" class="button radius bordered shadow success">Success</button>
+            <button type="button" class="button rounded bordered shadow alert">Alert</button>
+            <button type="button" class="button radius bordered shadow warning">Warning</button>
+    </header>
+
+    <main>
+        <button class="submit success button">Save</button>
+
+        <ul class="accordion" data-accordion>
+            <li class="accordion-item is-active" data-accordion-item>
+                <!-- Accordion tab title -->
+                <a href="#" class="accordion-title">Accordion 1</a>
+
+                <!-- Accordion tab content: it would start in the open state due to using the `is-active` state class. -->
+                <div class="accordion-content" data-tab-content>
+                    <p>Panel 1. Lorem ipsum dolor</p>
+                    <a href="#">Nowhere to Go</a>
+                </div>
+            </li>
+            <li class="accordion-item" data-accordion-item>
+                <!-- Accordion tab title -->
+                <a href="#" class="accordion-title">Nevertheless</a>
+
+                <!-- Accordion tab content: it would start in the open state due to using the `is-active` state class. -->
+                <div class="accordion-content" data-tab-content>
+                    <p>Panel 1. Lorem ipsum dolor</p>
+                    <a href="#">Nowhere to Go</a>
+                </div>
+            </li>
+            <!-- ... -->
+        </ul>
+    </main>
+
+    <footer>
+
+    </footer>
+    <!-- foundation => css with protoype: true; & js bundle -->
+    <script src="/xbcvbx/webpack/foundation.webpack.js"></script>
 </body>
 
 </html>

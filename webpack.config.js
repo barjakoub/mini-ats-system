@@ -1,10 +1,10 @@
 import path from 'node:path';
 
 export default {
-    entry: `./public/bundle_source/bundle.js`,
+    entry: `./public/bundling.js`,
     output: {
-        path: path.resolve(`public/bundle_results`),
-        filename: `foundation-bundle.js`
+        path: path.resolve(`public/webpack`),
+        filename: `foundation.webpack.js`
     },
     module: {
         rules: [

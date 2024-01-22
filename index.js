@@ -7,6 +7,10 @@ import express from 'express';
 */
 import staticFilesOptions from './config/static-files.js';
 /**
+ * template engine
+ */
+import ejsLayouts from 'express-ejs-layouts';
+/**
  * additional
  */
 import perantara from "./src/apis/v1/routers/_router.js";
@@ -22,13 +26,19 @@ app.set(`view engine`, `ejs`);
 app.set(`views`, `./views`);
 
 /**
+ * layouting using express-ejs-layouts
+ */
+app.use(ejsLayouts);
+app.set(`layout`, `layouts/main.layout.ejs`);
+
+/**
  * Serving static files
  */
-app.use(express.static(`public`, staticFilesOptions));
+app.use(`/xbcvbx`, express.static(`public`, staticFilesOptions));
 
 app.get(`/`, (req, res) => {
     console.info(req.path);
-    res.render(`pages/index`);
+    res.render(`pages/index`, { pageTitle: `Here we go:!` });
 });
 
 const PORT = 8080; // production => should use process.env.ENV_NAME
