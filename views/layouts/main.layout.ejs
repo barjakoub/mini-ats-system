@@ -7,74 +7,26 @@
     <title>
         <%= pageTitle %>
     </title>
-    <!-- <link rel="stylesheet" href="/xbcvbx/css/app.css"> -->
+    <link rel="shortcut icon"
+        href="/xbcvbx/svg/job-employment-business-recuitment-seeker-applicant-work-svgrepo-com.svg" type="image/x-icon">
 </head>
 
 <body>
-    <h1>
-        New Page Configuration:!
-    </h1>
+    <!-- NAV HEADER -->
     <header>
-        <h4>Dropdown Menu</h4>
-        <ul class="dropdown menu" data-dropdown-menu>
-            <li>
-                <a href="#">Item 1</a>
-                <ul class="menu">
-                    <li><a href="#">Item 1A</a></li>
-                    <!-- ... -->
-                </ul>
-            </li>
-            <li><a href="#">Item 2</a></li>
-            <li><a href="#">Item 3</a></li>
-            <li><a href="#">Item 4</a></li>
-        </ul>
-        <h4>Accordion Menu</h4>
-        <ul class="vertical menu accordion-menu" data-accordion-menu>
-            <li>
-                <a href="#">Item 1</a>
-                <ul class="menu vertical nested">
-                    <li><a href="#">Item 1A</a></li>
-                    <li><a href="#">Item 1B</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Item 2</a></li>
-        </ul>
         <%- defineContent('navigation') %>
-            <button type="button" class="button radius bordered shadow primary">Primary</button>
-            <button type="button" class="button rounded bordered shadow secondary">Secondary</button>
-            <button type="button" class="button radius bordered shadow success">Success</button>
-            <button type="button" class="button rounded bordered shadow alert">Alert</button>
-            <button type="button" class="button radius bordered shadow warning">Warning</button>
     </header>
-
+    <!-- MAIN CONTENT -->
     <main>
-        <button class="submit success button">Save</button>
-
-        <ul class="accordion" data-accordion>
-            <li class="accordion-item is-active" data-accordion-item>
-                <!-- Accordion tab title -->
-                <a href="#" class="accordion-title">Accordion 1</a>
-
-                <!-- Accordion tab content: it would start in the open state due to using the `is-active` state class. -->
-                <div class="accordion-content" data-tab-content>
-                    <p>Panel 1. Lorem ipsum dolor</p>
-                    <a href="#">Nowhere to Go</a>
+        <!-- NOTE: defineContent('_NAME') is optional behavior, would not cause an error, whereas direct write '_NAME' will cause an error because that behave mandatory element -->
+        <div class="main-layout grid-x grid-container full">
+            <%- defineContent('sidebar') %>
+                <div class="cell large-9">
+                    <%- content %>
                 </div>
-            </li>
-            <li class="accordion-item" data-accordion-item>
-                <!-- Accordion tab title -->
-                <a href="#" class="accordion-title">Nevertheless</a>
-
-                <!-- Accordion tab content: it would start in the open state due to using the `is-active` state class. -->
-                <div class="accordion-content" data-tab-content>
-                    <p>Panel 1. Lorem ipsum dolor</p>
-                    <a href="#">Nowhere to Go</a>
-                </div>
-            </li>
-            <!-- ... -->
-        </ul>
+        </div>
     </main>
-
+    <!-- FOOTER -->
     <footer>
 
     </footer>

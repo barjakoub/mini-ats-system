@@ -14,7 +14,7 @@ rules:
     - error
     - windows
   quotes:
-    - off
+    - warn
     - backtick
   semi:
     - off

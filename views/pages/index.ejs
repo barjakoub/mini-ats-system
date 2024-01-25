@@ -1,6 +1,104 @@
-<section>
-    <h2>Welcome to this page</h2>
-    <p>
-        This is content of the home page.
-    </p>
-</section>
+<!-- including top navigation page => components/navigation.ejs -->
+<%- include('../components/navigation') %>
+    <%- include('../components/sidebar') %>
+        <%- contentFor('content') %>
+            <style>
+                button.find-job {
+                    padding: 1em 3em;
+                    background-color: #06816d;
+                    transition: margin-left 0.5s;
+                    border-radius: 0.3em;
+                }
+
+                button.find-job:hover {
+                    margin-left: 1em;
+                    background-color: #06816d;
+                }
+
+                /* section.main-section {
+                    height: 100vh;
+                } */
+
+                .main-section>.left-content>div>.left-paragraph {
+                    padding-right: 14em;
+                    color: rgb(116, 116, 116);
+                    font-weight: bold;
+                }
+
+                .main-section>.right-content>div>ul>li>a {
+                    color: darkgray !important;
+                    font-size: smaller;
+                }
+
+                .main-section>.right-content>div>ul>li>a:hover {
+                    font-weight: normal;
+                }
+
+                .main-section>.right-content>div>ul>li>a>span {
+                    color: #06816d;
+                    font-weight: bold;
+                }
+
+                .main-section .date-posted {
+                    font-size: small;
+                }
+
+                .main-section .right-content .image-container {
+                    height: max-content;
+                }
+
+                .main-section .right-content .image-container img {
+                    height: 25em;
+                }
+
+                .responsive-img {
+                    max-width: 100%;
+                    height: auto;
+                    display: block;
+                    /* Removes extra space below inline images */
+                    margin: 0 auto;
+                    /* Center the image */
+                }
+            </style>
+            <div class="grid-container full padding-3 ">
+                <section class="main-section grid-x ">
+                    <div class="left-content cell  large-6 grid-y flex-container">
+                        <div class="cell  left-title flex-child-shrink">
+                            <h2>
+                                <strong>Find your dream job</strong>
+                            </h2>
+                        </div>
+                        <div class="cell  flex-child-shrink">
+                            <p class="left-paragraph padding-top-3">
+                                Our mission is to help entrepreneurs and innovators shape the world through beautiful
+                                software.
+                                <br>
+                                We offer a safe, inclusive and productive environment for all team members. If you want
+                                to work from home and be a full
+                                time employee, great - you can apply right away.
+                            </p>
+                        </div>
+                        <div class="cell  left-button padding-top-3 flex-child-grow">
+                            <button class="find-job button">Find Job</button>
+                        </div>
+                    </div>
+                    <div class="right-content cell bordered large-6 grid-y">
+                        <div class="cell">
+                            <ul class="dropdown menu flex-container align-right" data-dropdown-menu>
+                                <li class="">
+                                    <a class="" href="" style="width: 15em;">Sort by <span>Last Posted</span></a>
+                                    <ul class="menu date-posted">
+                                        <li><a href="">January 31, 2023, at 12:30 PM UTC</a></li>
+                                        <li><a href="">December 21, 2023, at 14:00 PM UTC</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cell flex-container align-right bordered">
+                            <div class="image-container padding-top-2">
+                                <img class="bordered responsive-img" src="/xbcvbx/images/main-section.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>

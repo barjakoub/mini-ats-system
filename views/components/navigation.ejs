@@ -1,2 +1,170 @@
 <%- contentFor('navigation') %>
-    <button type="button" class="button">Here's Button</button>
+    <style>
+        nav {
+            background-color: #fbfaf8;
+        }
+
+        .menu-title {
+            width: 12.4em;
+            color: gray !important;
+            /* background-color: lightyellow; */
+        }
+
+        #work-location::before {
+            content: url('/xbcvbx/svg/location-sign-svgrepo-com.svg');
+            position: absolute;
+            top: 0.5em;
+            left: -1em;
+        }
+
+        #work-experience::before {
+            content: url('/xbcvbx/svg/userlane-svgrepo-com.svg');
+            position: absolute;
+            top: 0.5em;
+            left: -1em;
+        }
+
+        #work-salary::before {
+            content: url('/xbcvbx/svg/deposit-money-bank-salary-saving-phone-currency-svgrepo-com.svg');
+            position: absolute;
+            top: 0.5em;
+            left: -1em;
+        }
+
+        #work-salary-range::before {
+            content: url('/xbcvbx/svg/indonesian-rupiah-indonesian-rupiah-currency-indonesia-money-svgrepo-com.svg');
+            position: absolute;
+            top: 0.5em;
+            left: -1em;
+        }
+
+        .menu {
+            border: none;
+        }
+
+        .list-menu li a {
+            transition: padding-left 0.7s;
+            color: #06816d;
+        }
+
+        .list-menu li a:hover {
+            /* color: black; */
+            font-weight: bold;
+            padding-left: 1.5em;
+        }
+
+        #search-bar {
+            border: none;
+            box-shadow: none;
+            background-image: url('/xbcvbx/svg/search-alt-2-svgrepo-com.svg');
+            background-repeat: no-repeat;
+            background-position: 5px center;
+            background-color: transparent;
+
+            padding-left: 2em;
+
+            font-weight: bold;
+        }
+
+        #search-bar::placeholder {
+            font-size: small;
+        }
+
+        #search-bar:focus {
+            color: #06816d;
+        }
+
+        .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 6px;
+            content: "";
+            border-bottom-width: 0;
+            border-color: #06816d rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+            right: 5px;
+            left: auto;
+            margin-top: -3px;
+        }
+
+        nav .dropdown.menu:hover>li>a {
+            color: #06816d !important;
+            font-weight: bold;
+        }
+    </style>
+    <nav class="" style="padding: 0.7em 0;">
+        <!-- MENU CONTAINER -->
+        <ul class="menu grid-x align-spaced">
+            <li class="">
+                <!-- SEARCH FORM -->
+                <form action="" method="">
+                    <div class="form-input">
+                        <!-- change to use icon instead, then styling inside input form -->
+                        <!-- <label for="">Search</label> -->
+                        <input class="" type="text" placeholder="Search Jobs" id="search-bar" autocomplete="off">
+                    </div>
+                </form>
+            </li>
+            <li class="">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="is-dropdown-submenu-parent">
+                        <a class="menu-title" href="" id="work-location">
+                            Work Location
+                        </a>
+                        <ul class="menu list-menu">
+                            <li><a href="">Surabaya</a></li>
+                            <li><a href="">Jakarta</a></li>
+                            <li><a href="">Bandung</a></li>
+                            <li><a href="">DI Yogyakarta</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="is-dropdown-submenu-parent">
+                        <a class="menu-title" href="" id="work-experience">
+                            Experience
+                        </a>
+                        <ul class="menu list-menu">
+                            <li><a href="">Less than a year</a></li>
+                            <li><a href="">More than a year</a></li>
+                            <li><a href="">More than five years</a></li>
+                            <li><a href="">More than ten years</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="is-dropdown-submenu-parent">
+                        <a class="menu-title" href="" id="work-salary">
+                            Per Month
+                        </a>
+                        <ul class="menu list-menu">
+                            <li><a href="">Per Month</a></li>
+                            <li><a href="">Per Week</a></li>
+                            <li><a href="">Per Year</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="is-dropdown-submenu-parent">
+                        <a class="menu-title" href="" id="work-salary-range">
+                            Salary Range
+                        </a>
+                        <ul class="menu list-menu">
+                            <li><a href="">
+                                    < 5M Rupiah</a>
+                            </li>
+                            <li><a href="">> 5M Rupiah</a></li>
+                            <li><a href="">> 10M Rupiah</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
