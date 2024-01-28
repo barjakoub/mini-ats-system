@@ -1,15 +1,33 @@
 <%- contentFor('sidebar') %>
     <style>
+        /* FOUNDATION MEDIA SCREEN */
+        /* Small only */
+        @media screen and (max-width: 39.9375em) {}
+
+        /* Medium and up */
+        @media screen and (min-width: 40em) {}
+
+        /* Medium only */
+        @media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+        /* Large and up */
+        @media screen and (min-width: 64em) {}
+
+        /* Large only */
+        @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+        /* END FOUNDATION MEDIA SCREEN */
         aside {
-            background-color: #fbfaf8;
+            /* background-color: #fbfaf8; */
+            /* background-color: #ffc758; */
         }
 
-        .sidebar-title {
-            padding: 2em 0em;
+        /* .sidebar-title {
+            padding: 1em 0em;
 
             font-size: x-large;
             color: gray;
-        }
+        } */
 
         input[type="checkbox"] {
             visibility: hidden;
@@ -49,116 +67,134 @@
         .form-checkbox input[type="checkbox"]:checked~.checkmark {
             border: none;
         }
+
+        /* .sidebar-sticky {
+            position: fixed;
+            width: 100%;
+        } */
+
+        /* #sidebar-filtering {
+            padding-left: 5em;
+        } */
+
+        /* @media screen and (max-width: 1200px) {
+            #sidebar-filtering {
+                padding-left: 1.5em;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            aside {
+                display: none;
+            }
+        } */
     </style>
-    <aside class="cell large-3 border-box">
-        <div class="grid-y align-center" style="padding-left: 5em;">
-            <div class="cell sidebar-title">
-                <span>
-                    <strong>Details</strong>
-                </span>
+    <aside class="grid-y grid-frame bordered" id="sidebar-filtering" style="display: none;">
+        <div class="cell sidebar-title bordered">
+            <span>
+                <strong>Details</strong>
+            </span>
+        </div>
+        <div class="cell schedule-filters bordered">
+            <p class="subheader">
+                Schedule
+            </p>
+            <div class="schedule-checkbox">
+                <form action="">
+                    <!-- s-cb-1 refer to schedule-checkbox-1 -->
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="fulltime" id="s-cb-1"><label for="s-cb-1">Full Time</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="parttime" id="s-cb-2"><label for="s-cb-2">Part Time</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="volunteering" id="s-cb-3"><label for="s-cb-3">Volunteering</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="projectwork" id="s-cb-4"><label for="s-cb-4">Project
+                            Work</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="internship" id="s-cb-5"><label for="s-cb-5">Internship</label>
+                        <span class="checkmark"></span>
+                    </div>
+                </form>
             </div>
-            <div class="cell">
-                <p class="subheader">
-                    Schedule
-                </p>
-                <div class="schedule-checkbox">
-                    <form action="">
-                        <!-- s-cb-1 refer to schedule-checkbox-1 -->
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="fulltime" id="s-cb-1"><label for="s-cb-1">Full Time</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="parttime" id="s-cb-2"><label for="s-cb-2">Part Time</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="volunteering" id="s-cb-3"><label
-                                for="s-cb-3">Volunteering</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="projectwork" id="s-cb-4"><label for="s-cb-4">Project
-                                Work</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="internship" id="s-cb-5"><label for="s-cb-5">Internship</label>
-                            <span class="checkmark"></span>
-                        </div>
-                    </form>
-                </div>
+        </div>
+        <div class="cell employment-type-filters bordered">
+            <!-- padding-top-2 -->
+            <p class="subheader">
+                Employment type
+            </p>
+            <div class="employment-type-checkbox">
+                <form action="">
+                    <!-- e-type-cb-1 refer to employment-type-checkbox-1 -->
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="fullday" id="e-type-cb-1"><label for="e-type-cb-1">Full
+                            Day</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="shiftwork" id="e-type-cb-2"><label for="e-type-cb-2">Shift
+                            Work</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="flexibleschedule" id="e-type-cb-3"><label
+                            for="e-type-cb-3">Flexible Schedule</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="distantwork" id="e-type-cb-4"><label for="e-type-cb-4">Distant
+                            Work</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="shiftmethod" id="e-type-cb-5"><label for="e-type-cb-5">Shift
+                            Method</label>
+                        <span class="checkmark"></span>
+                    </div>
+                </form>
             </div>
-            <div class="cell">
-                <p class="subheader padding-top-2">
-                    Employment type
-                </p>
-                <div class="employment-type-checkbox">
-                    <form action="">
-                        <!-- e-type-cb-1 refer to employment-type-checkbox-1 -->
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="fullday" id="e-type-cb-1"><label for="e-type-cb-1">Full
-                                Day</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="shiftwork" id="e-type-cb-2"><label for="e-type-cb-2">Shift
-                                Work</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="flexibleschedule" id="e-type-cb-3"><label
-                                for="e-type-cb-3">Flexible Schedule</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="distantwork" id="e-type-cb-4"><label for="e-type-cb-4">Distant
-                                Work</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="shiftmethod" id="e-type-cb-5"><label for="e-type-cb-5">Shift
-                                Method</label>
-                            <span class="checkmark"></span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="cell">
-                <p class="subheader padding-top-2">
-                    Professional level
-                </p>
-                <div class="professional-level-checkbox">
-                    <form action="">
-                        <!-- p-level-cb-1 refer to professional-level-checkbox-1 -->
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="traineelevel" id="p-level-cb-1"><label
-                                for="p-level-cb-1">Trainee
-                                Level</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="juniorlevel" id="p-level-cb-2"><label for="p-level-cb-2">Junior
-                                Level</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="middelelevel" id="p-level-cb-3"><label
-                                for="p-level-cb-3">Middele Level</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="seniorlevel" id="p-level-cb-4"><label for="p-level-cb-4">Senior
-                                Level</label>
-                            <span class="checkmark"></span>
-                        </div>
-                        <div class="form-checkbox flex-container">
-                            <input type="checkbox" name="directorlevel" id="p-level-cb-5"><label
-                                for="p-level-cb-5">Director
-                                Level</label>
-                            <span class="checkmark"></span>
-                    </form>
-                </div>
+        </div>
+        <div class="cell professional-level-filters bordered">
+            <!-- padding-top-2 -->
+            <p class="subheader">
+                Professional level
+            </p>
+            <div class="professional-level-checkbox">
+                <form action="">
+                    <!-- p-level-cb-1 refer to professional-level-checkbox-1 -->
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="traineelevel" id="p-level-cb-1"><label for="p-level-cb-1">Trainee
+                            Level</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="juniorlevel" id="p-level-cb-2"><label for="p-level-cb-2">Junior
+                            Level</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="middelelevel" id="p-level-cb-3"><label for="p-level-cb-3">Middele
+                            Level</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="seniorlevel" id="p-level-cb-4"><label for="p-level-cb-4">Senior
+                            Level</label>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div class="form-checkbox flex-container">
+                        <input type="checkbox" name="directorlevel" id="p-level-cb-5"><label for="p-level-cb-5">Director
+                            Level</label>
+                        <span class="checkmark"></span>
+                </form>
             </div>
         </div>
         <!-- <div class="grid-container full">

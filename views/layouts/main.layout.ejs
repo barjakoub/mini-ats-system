@@ -9,6 +9,42 @@
     </title>
     <link rel="shortcut icon"
         href="/xbcvbx/svg/job-employment-business-recuitment-seeker-applicant-work-svgrepo-com.svg" type="image/x-icon">
+    <style>
+        /* FOUNDATION MEDIA SCREEN */
+        /* Small only */
+        @media screen and (max-width: 39.9375em) {}
+
+        /* Medium and up */
+        @media screen and (min-width: 40em) {}
+
+        /* Medium only */
+        @media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+        /* Large and up */
+        @media screen and (min-width: 64em) {}
+
+        /* Large only */
+        @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+        /* END FOUNDATION MEDIA SCREEN */
+
+        /* MAIN LAYOUT STYLE */
+        .stick-navigate {
+            position: fixed;
+            top: 0;
+        }
+
+        /* END MAIN LAYOUT STYLE */
+        @media screen and (max-width: 850px) {
+            .main-layout {
+                display: flex;
+            }
+
+            .content {
+                background-color: green;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -17,13 +53,15 @@
         <%- defineContent('navigation') %>
     </header>
     <!-- MAIN CONTENT -->
-    <main>
+    <main class="">
         <!-- NOTE: defineContent('_NAME') is optional behavior, would not cause an error, whereas direct write '_NAME' will cause an error because that behave mandatory element -->
-        <div class="main-layout grid-x grid-container full">
-            <%- defineContent('sidebar') %>
-                <div class="cell large-9">
-                    <%- content %>
-                </div>
+        <div class="main-layout grid-x grid-container full bordered">
+            <div class="cell sidebar medium-3 large-3 border-box">
+                <%- defineContent('sidebar') %>
+            </div>
+            <div class="cell content medium-12 large-9">
+                <%- defineContent('content') %>
+            </div>
         </div>
     </main>
     <!-- FOOTER -->
@@ -32,6 +70,7 @@
     </footer>
     <!-- foundation => css with protoype: true; & js bundle -->
     <script src="/xbcvbx/webpack/foundation.webpack.js"></script>
+    <script src="/xbcvbx/js/app.js"></script>
 </body>
 
 </html>

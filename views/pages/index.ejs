@@ -20,7 +20,7 @@
                 } */
 
                 .main-section>.left-content>div>.left-paragraph {
-                    padding-right: 14em;
+                    /* padding-right: 14em; */
                     color: rgb(116, 116, 116);
                     font-weight: bold;
                 }
@@ -51,16 +51,50 @@
                     height: 25em;
                 }
 
-                .responsive-img {
-                    max-width: 100%;
-                    height: auto;
-                    display: block;
-                    /* Removes extra space below inline images */
-                    margin: 0 auto;
-                    /* Center the image */
+                .job-card-item {
+                    background-color: #f8e4bd;
+                    border-radius: 0.5em;
+                }
+
+                .jobs-card .jobs-card-title {
+                    font-weight: bolder;
+                }
+
+                .jobs-card-content .company-logos.card {
+                    width: 3em;
+                    /* height: 4em; */
+                }
+
+                .jobs-card-content .job-info>span {
+                    font-size: smaller;
+                }
+
+                .label {
+                    border-radius: 0.5em;
+                }
+
+                .job-work-place>p {
+                    font-size: small;
+                }
+
+                .job-description {
+                    font-size: smaller;
+                }
+
+                .jobs-card-content button.button {
+                    border-radius: 0.5em;
+                    width: 100%;
+                }
+
+                .apply-btn {
+                    background-color: #06816d;
+                }
+
+                .apply-btn:hover {
+                    background-color: #056454;
                 }
             </style>
-            <div class="grid-container full padding-3 ">
+            <div class="grid-container full padding-3" style="display: none;">
                 <section class="main-section grid-x ">
                     <div class="left-content cell  large-6 grid-y flex-container">
                         <div class="cell  left-title flex-child-shrink">
@@ -68,12 +102,14 @@
                                 <strong>Find your dream job</strong>
                             </h2>
                         </div>
-                        <div class="cell  flex-child-shrink">
+                        <div class="cell flex-child-shrink">
                             <p class="left-paragraph padding-top-3">
-                                Our mission is to help entrepreneurs and innovators shape the world through beautiful
+                                Our mission is to help entrepreneurs and innovators shape the world through
+                                beautiful
                                 software.
                                 <br>
-                                We offer a safe, inclusive and productive environment for all team members. If you want
+                                We offer a safe, inclusive and productive environment for all team members. If you
+                                want
                                 to work from home and be a full
                                 time employee, great - you can apply right away.
                             </p>
@@ -82,7 +118,7 @@
                             <button class="find-job button">Find Job</button>
                         </div>
                     </div>
-                    <div class="right-content cell bordered large-6 grid-y">
+                    <div class="right-content cell large-6 grid-y">
                         <div class="cell">
                             <ul class="dropdown menu flex-container align-right" data-dropdown-menu>
                                 <li class="">
@@ -94,10 +130,21 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="cell flex-container align-right bordered">
-                            <div class="image-container padding-top-2">
-                                <img class="bordered responsive-img" src="/xbcvbx/images/main-section.png" alt="">
-                            </div>
+                        <div class="cell card padding-top-2" style="border: none;">
+                            <img class="" src="/xbcvbx/images/main-section.png" alt="">
+                        </div>
+                    </div>
+                </section>
+                <!-- JOBS CARD -->
+                <section class="jobs-card ">
+                    <div class="jobs-card-title ">
+                        <h6><strong>Recommended Jobs</strong></h6>
+                    </div>
+                    <div class="jobs-card-content grid-container full ">
+                        <!-- JOBS CARD CONTAINER -->
+                        <div class="grid-x grid-margin-x grid-margin-y medium-up-2 large-up-3">
+                            <!-- JOBS CARD ITEM -->
+                            <%- include('../components/jobcard') %>
                         </div>
                     </div>
                 </section>

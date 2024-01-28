@@ -1,15 +1,234 @@
 <%- contentFor('navigation') %>
     <style>
-        nav {
-            background-color: #fbfaf8;
+        /* FOUNDATION MEDIA SCREEN */
+        /* Small only */
+        @media screen and (max-width: 39.99875em) {
+
+            /* LARGE NAVIGATE */
+            .large-screen-navigate {
+                width: 10em;
+                border: 1px solid blue;
+            }
+
+            .navigate-item {
+                display: none;
+            }
+
+            /* END LARGE NAVIGATE */
+            /* ------------------ */
+            /* SMALL NAVIGATE */
+            .small-screen-navigate {
+                display: block;
+                border: 1px solid red;
+            }
+
+            .small-navigate>ul {
+                display: flex;
+                /* no-gap */
+            }
+
+            .small-navigate>ul>li .small-navigate-text {
+                padding: 1em 0.5em;
+                font-size: small;
+            }
+
+            /* END SMALL NAVIGATE */
+            /* ------------------ */
+            /* NAVIGATION CONTAINER */
+            .top-navigate {
+                display: flex;
+                justify-content: space-between;
+
+                /* no-padding */
+                border: 1px solid green;
+            }
+
+            /* END NAVIGATION CONTAINER */
+            /* ------------------------ */
+            /* OFF-CANVAS */
+            .off-canvas-container>#more-filter-off-canvas {
+                width: 12.5em;
+                padding-left: 1em !important;
+            }
+
+            .off-canvas-header {
+                padding-left: 0em !important;
+                font-size: small !important;
+            }
+
+            .off-canvas-filter-form {
+                font-size: small;
+            }
+
+            /* END OFF-CANVAS */
         }
 
-        .menu-title {
-            width: 12.4em;
-            color: gray !important;
-            /* background-color: lightyellow; */
+        /* Medium and up */
+        @media screen and (min-width: 40em) {}
+
+        /* Medium only */
+        @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+            /* SMALL NAVIGATE */
+            .small-screen-navigate {
+                display: block;
+                border: 1px solid red;
+            }
+
+            /* END SMALL NAVIGATE */
+            /* ================== */
+            /* LARGE NAVIGATE */
+            .large-screen-navigate {
+                border: 1px solid blue;
+            }
+
+            .navigate-item {
+                display: none;
+            }
+
+            /* END LARGE NAVIGATE */
+
+            .top-navigate {
+                display: flex;
+                justify-content: space-between;
+
+                padding: 0em 2.5em;
+
+                border: 1px solid green;
+            }
+
+            .small-navigate>ul {
+                display: flex;
+                justify-content: end;
+                gap: 2em;
+            }
+
+            .small-navigate li>a {
+                font-size: smaller;
+            }
         }
 
+        /* Large and up */
+        @media screen and (min-width: 64em) {
+            .navigate-item>ul>li>a.menu-title {
+                width: 12.5em;
+            }
+        }
+
+        /* Large only */
+        @media screen and (min-width: 64em) and (max-width: 74.9375em) {
+
+            /* SMALL NAVIGATE */
+            .small-screen-navigate {
+                display: none;
+            }
+
+            /* END SMALL NAVIGATE */
+            /* ================== */
+            /* LARGE NAVIGATE */
+            .large-screen-navigate .menu-title {
+                font-size: small;
+            }
+
+            /* END LARGE NAVIGATE */
+        }
+
+        /* X-Large up */
+        @media screen and (min-width: 75em) {
+
+            /* LARGE NAVIGATE */
+            .large-screen-navigate .menu-title {
+                font-size: medium;
+            }
+
+            /* END LARGE NAVIGATE */
+            /* ================== */
+            /* SMALL NAVIGATE */
+            .small-screen-navigate {
+                display: none;
+            }
+
+            /* END SMALL NAVIGATE */
+        }
+
+        /* END FOUNDATION MEDIA SCREEN */
+        /* --------------------------- */
+
+        /* GENERAL STYLE */
+        /* Navigation Container */
+        nav.top-navigate {
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+        }
+
+        /* End; */
+
+        /* ---------------- */
+
+        /* Navigation Items */
+        .navigate-item a {
+            color: #06816d !important;
+        }
+
+        .navigate-item>ul>li>a.menu-title {
+            color: #06816d;
+        }
+
+        .navigate-item>ul>li>a.menu-title:hover {
+            color: #06816d;
+        }
+
+        .list-menu>li>a {
+            transition: padding-left 0.5s;
+        }
+
+        .list-menu>li>a:hover {
+            padding-left: 1.5em;
+            font-weight: bold;
+        }
+
+        .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
+            /* to get more detail 
+               1. inspect element
+               2. find the dropdown arrow
+               3. see detailed css property
+
+               note: to change the color just change the border color
+            */
+            border-color: #06816d rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+        }
+
+        /* End Navigation Items */
+
+        /* ---------------------------------------- */
+
+        /* Search Bar Jobs | <input> -> #search-bar */
+        #search-bar {
+            border: none;
+            box-shadow: none;
+            background-image: url('/xbcvbx/svg/search-alt-2-svgrepo-com.svg');
+            background-repeat: no-repeat;
+            background-position: 5px center;
+            background-color: transparent;
+
+            padding-left: 2em;
+
+            font-weight: bold;
+        }
+
+        #search-bar::placeholder {
+            font-size: small;
+        }
+
+        #search-bar:focus {
+            color: #06816d;
+        }
+
+        /* End; */
+
+        /* ------------------------ */
+
+        /* Navigation :before Icons */
         #work-location::before {
             content: url('/xbcvbx/svg/location-sign-svgrepo-com.svg');
             position: absolute;
@@ -38,66 +257,81 @@
             left: -1em;
         }
 
-        .menu {
-            border: none;
-        }
+        /* End; */
 
-        .list-menu li a {
-            transition: padding-left 0.7s;
-            color: #06816d;
-        }
+        /* ----------------------- */
 
-        .list-menu li a:hover {
-            /* color: black; */
-            font-weight: bold;
-            padding-left: 1.5em;
-        }
-
-        #search-bar {
-            border: none;
-            box-shadow: none;
-            background-image: url('/xbcvbx/svg/search-alt-2-svgrepo-com.svg');
-            background-repeat: no-repeat;
-            background-position: 5px center;
-            background-color: transparent;
-
-            padding-left: 2em;
-
-            font-weight: bold;
-        }
-
-        #search-bar::placeholder {
-            font-size: small;
-        }
-
-        #search-bar:focus {
-            color: #06816d;
-        }
-
-        .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
-            display: block;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 6px;
-            content: "";
-            border-bottom-width: 0;
-            border-color: #06816d rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-            right: 5px;
-            left: auto;
-            margin-top: -3px;
-        }
-
-        nav .dropdown.menu:hover>li>a {
+        /* Small Screen Navigation */
+        .small-screen-navigate a {
             color: #06816d !important;
+        }
+
+        .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right>a::after {
+            /* selector refer to an arrow icon of -> [.small-navigate-text]
+               to get more detail 
+               1. inspect element
+               2. find the dropdown arrow
+               3. see detailed css property
+
+               note: to change the color just change the border color
+            */
+            border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #06816d;
+        }
+
+        .is-dropdown-submenu .is-dropdown-submenu-parent.opens-left>a::after {
+            /* selector refer to an arrow icon of -> [.small-navigate-text>ul>li>a[e.g "Work Location"]]
+               to get more detail 
+               1. inspect element
+               2. find the dropdown arrow
+               3. see detailed css property
+
+               note: to change the color just change the border color
+            */
+            border-color: rgba(0, 0, 0, 0) #06816d rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+            ;
+        }
+
+        .menu .is-active>a {
+            /* selector refer to background-color of -> [.small-navigate-text+ul.menu]
+               to get more detail 
+               1. inspect element
+               2. find the dropdown arrow
+               3. see detailed css property
+
+               note: to change the color just change the border color
+            */
+            font-weight: bold;
+
+            background-color: white;
+        }
+
+        /* End; */
+
+        /* --------------------- */
+
+        /* Off Canvas Navigation */
+        .off-canvas-container>#more-filter-off-canvas {
+            padding-left: 2em;
+        }
+
+        .off-canvas-container .off-canvas-header {
+            padding-top: 0.7em;
+            padding-bottom: 0.7em;
+            padding-left: 1em;
+
+            font-size: large;
             font-weight: bold;
         }
+
+        /* End; */
+        /* END GENERAL STYLE */
     </style>
-    <nav class="" style="padding: 0.7em 0;">
-        <!-- MENU CONTAINER -->
-        <ul class="menu grid-x align-spaced">
-            <li class="">
-                <!-- SEARCH FORM -->
+    <!-- make this navigation sticky -->
+    <nav class="top-navigate" id="nav-bar">
+        <!-- Large Screen Navigation -->
+        <ul class="menu large-screen-navigate grid-x align-spaced">
+            <li class="search-box-jobs">
+                <!-- Search Form -->
                 <form action="" method="">
                     <div class="form-input">
                         <!-- change to use icon instead, then styling inside input form -->
@@ -106,7 +340,8 @@
                     </div>
                 </form>
             </li>
-            <li class="">
+            <!-- FROM => ./navigation.items.ejs -->
+            <li class="navigate-item">
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li class="is-dropdown-submenu-parent">
                         <a class="menu-title" href="" id="work-location">
@@ -121,7 +356,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="">
+            <li class="navigate-item">
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li class="is-dropdown-submenu-parent">
                         <a class="menu-title" href="" id="work-experience">
@@ -136,7 +371,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="">
+            <li class="navigate-item">
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li class="is-dropdown-submenu-parent">
                         <a class="menu-title" href="" id="work-salary">
@@ -150,7 +385,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="">
+            <li class="navigate-item">
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li class="is-dropdown-submenu-parent">
                         <a class="menu-title" href="" id="work-salary-range">
@@ -167,4 +402,201 @@
                 </ul>
             </li>
         </ul>
+        <!-- Small Screen Navigation -->
+        <div class="small-screen-navigate flex-container align-middle">
+            <!-- this element should nested the main navigation -->
+            <div class="small-navigate">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="quick-filter is-dropdown-submenu-parent bordered">
+                        <a class="small-navigate-text" href="">Quick Filter</a>
+                        <ul class="menu list-menu">
+                            <li>
+                                <a href="">Work Location</a>
+                                <ul class="menu list-menu">
+                                    <li><a href="">Surabaya</a></li>
+                                    <li><a href="">Jakarta</a></li>
+                                    <li><a href="">Bandung</a></li>
+                                    <li><a href="">DI Yogyakarta</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">Experience</a>
+                                <ul class="menu list-menu">
+                                    <li><a href="">Less than a year</a></li>
+                                    <li><a href="">More than a year</a></li>
+                                    <li><a href="">More than five years</a></li>
+                                    <li><a href="">More than ten years</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">Base Salary</a>
+                                <ul class="menu list-menu">
+                                    <li><a href="">Per Month</a></li>
+                                    <li><a href="">Per Week</a></li>
+                                    <li><a href="">Per Year</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">Salary Range</a>
+                                <ul class="menu list-menu">
+                                    <li><a href="">
+                                            < 5M Rupiah</a>
+                                    </li>
+                                    <li><a href="">> 5M Rupiah</a></li>
+                                    <li><a href="">> 10M Rupiah</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="more-filter bordered">
+                        <a type="button" class="small-navigate-text button clear"
+                            data-toggle="more-filter-off-canvas">More
+                            Filters</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- off canvas for small navigate -->
+            <div class="off-canvas-container off-canvas-wrapper">
+                <!-- change off-canvas background here -->
+                <div class="off-canvas position-left grid-frame" id="more-filter-off-canvas" data-off-canvas>
+                    <!-- OFF CANVAS HEADER -->
+                    <div class="off-canvas-header">
+                        <span>Details</span>
+                        <!-- CLOSE BUTTON -->
+                        <button type="button" class="small close-button" aria-label="Close menu" data-close>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!-- NAVIGATE ITEM -->
+                    <div class="off-canvas-filter-form grid-y bordered">
+                        <div class="" style="height: auto;">
+                            <div class="cell schedule-filters margin-top-1 bordered">
+                                <p class="subheader">
+                                    Schedule
+                                </p>
+                                <div class="schedule-checkbox">
+                                    <form action="">
+                                        <!-- s-cb-1 refer to schedule-checkbox-1 -->
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="fulltime" id="s-cb-1"><label for="s-cb-1">Full
+                                                Time</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="parttime" id="s-cb-2"><label for="s-cb-2">Part
+                                                Time</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="volunteering" id="s-cb-3"><label
+                                                for="s-cb-3">Volunteering</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="projectwork" id="s-cb-4"><label
+                                                for="s-cb-4">Project
+                                                Work</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="internship" id="s-cb-5"><label
+                                                for="s-cb-5">Internship</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="cell employment-type-filters margin-top-1 bordered">
+                                <!-- padding-top-2 -->
+                                <p class="subheader">
+                                    Employment type
+                                </p>
+                                <div class="employment-type-checkbox">
+                                    <form action="">
+                                        <!-- e-type-cb-1 refer to employment-type-checkbox-1 -->
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="fullday" id="e-type-cb-1"><label
+                                                for="e-type-cb-1">Full
+                                                Day</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="shiftwork" id="e-type-cb-2"><label
+                                                for="e-type-cb-2">Shift
+                                                Work</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="flexibleschedule" id="e-type-cb-3"><label
+                                                for="e-type-cb-3">Flexible
+                                                Schedule</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="distantwork" id="e-type-cb-4"><label
+                                                for="e-type-cb-4">Distant
+                                                Work</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="shiftmethod" id="e-type-cb-5"><label
+                                                for="e-type-cb-5">Shift
+                                                Method</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="cell professional-level-filters margin-top-1 bordered">
+                                <!-- padding-top-2 -->
+                                <p class="subheader">
+                                    Professional level
+                                </p>
+                                <div class="professional-level-checkbox">
+                                    <form action="">
+                                        <!-- p-level-cb-1 refer to professional-level-checkbox-1 -->
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="traineelevel" id="p-level-cb-1"><label
+                                                for="p-level-cb-1">Trainee
+                                                Level</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="juniorlevel" id="p-level-cb-2"><label
+                                                for="p-level-cb-2">Junior
+                                                Level</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="middelelevel" id="p-level-cb-3"><label
+                                                for="p-level-cb-3">Middele
+                                                Level</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="seniorlevel" id="p-level-cb-4"><label
+                                                for="p-level-cb-4">Senior
+                                                Level</label>
+                                            <span class="checkmark"></span>
+                                        </div>
+                                        <div class="form-checkbox flex-container">
+                                            <input type="checkbox" name="directorlevel" id="p-level-cb-5"><label
+                                                for="p-level-cb-5">Director
+                                                Level</label>
+                                            <span class="checkmark"></span>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- BUTTON => apply more filters -->
+                            <div class="button-apply-container margin-top-1 padding-right-1 bordered">
+                                <button class="button expanded rounded success">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="off-canvas-content" data-off-canvas-content>
+
+                </div>
+            </div>
+        </div>
     </nav>

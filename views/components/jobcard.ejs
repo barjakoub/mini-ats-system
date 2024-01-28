@@ -1,1 +1,80 @@
-<%- contentFor('jobcard') %>
+<style>
+    /* FOUNDATION MEDIA SCREEN */
+    /* Small only */
+    @media screen and (max-width: 39.9375em) {}
+
+    /* Medium and up */
+    @media screen and (min-width: 40em) {}
+
+    /* Medium only */
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+    /* Large and up */
+    @media screen and (min-width: 64em) {}
+
+    /* Large only */
+    @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+    /* END FOUNDATION MEDIA SCREEN */
+    @media screen and (max-width: 640px) {
+        .job-info {
+            text-align: left;
+        }
+
+        .job-item-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .job-item-title {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<div class="cell job-card-item grid-y padding-2">
+    <div class="job-item-header cell grid-x align-middle medium-up-2">
+        <div class="cell company-logos card flex-child-shrink rounded">
+            <img src="/xbcvbx/images/forbes-logo-svgrepo-com.svg" alt="">
+        </div>
+        <div class="cell post-date flex-child-grow text-right subheader bordered">
+            <span>Post Date</span>
+        </div>
+    </div>
+    <div class="cell grid-x job-item-title bordered">
+        <h6 class="cell flex-child-shrink bordered">
+            <strong>UX Researcher and UI Builder</strong>
+        </h6>
+        <div class="cell flex-child-grow job-info bordered">
+            <span class="subheader">49 applicant</span>
+        </div>
+    </div>
+    <div class="cell job-category-badges">
+        <!-- each job categories use different color -->
+        <span class="label">Full Time</span>
+        <span class="label">Distant</span>
+    </div>
+    <div class="cell job-work-place">
+        <p>
+            <strong>Chicago, United States of Amerika</strong>
+        </p>
+    </div>
+    <div class="cell job-description">
+        <p>
+            We want our devices and service to be more than just beatiful, but also usefull
+            and intutive. To achieve this goal...
+        </p>
+    </div>
+    <div class="cell job-button ">
+        <div class="grid-x grid-margin-x align-spaced small-up-2">
+            <div class="cel small-6 flex-child-grow full ">
+                <button class="button apply-btn">Apply</button>
+            </div>
+            <div class="cel small-6 flex-child-grow full ">
+                <button class="button hollow secondary">Contacts</button>
+            </div>
+        </div>
+    </div>
+</div>
