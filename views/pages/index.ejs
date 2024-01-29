@@ -3,107 +3,263 @@
     <%- include('../components/sidebar') %>
         <%- contentFor('content') %>
             <style>
-                button.find-job {
+                /* FOUNDATION MEDIA QUERIES */
+                /* Small only */
+                @media screen and (max-width: 39.9375em) {
+                    .main-section>.left-content>.left-title>p {
+                        font-size: 1.5em;
+                        font-weight: bold;
+                    }
+
+                    .jobs-card-container {
+                        display: grid;
+                        gap: 1em;
+                        grid-template-columns: auto;
+                        border: 1px solid red;
+                    }
+                }
+
+                /* Medium and up */
+                @media screen and (min-width: 40em) {
+                    .jobs-card-container {
+                        display: grid;
+                        gap: 1em;
+                        grid-template-columns: auto auto;
+                        border: 1px solid red;
+                    }
+                }
+
+                /* Medium only */
+                @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+                    .main-section>.left-content>.left-title>p {
+                        font-size: 2em;
+                        font-weight: bold;
+                    }
+                }
+
+                /* Large and up */
+                @media screen and (min-width: 64em) {
+                    .jobs-card-container {
+                        display: grid;
+                        gap: 1em;
+                        grid-template-columns: auto auto;
+                        border: 1px solid red;
+                    }
+                }
+
+                /* Large only */
+                @media screen and (min-width: 64em) and (max-width: 74.9375em) {
+                    .main-section>.left-content>.left-title>p {
+                        margin-bottom: 1.5em;
+
+                        font-size: 2em;
+                        font-weight: bold;
+                    }
+
+                    .main-section>.left-content p.left-paragraph {
+                        font-size: 0.9em;
+                    }
+                }
+
+                /* X-Large up */
+                @media screen and (min-width: 75em) {
+                    .main-section>.left-content>.left-title>p {
+                        margin-bottom: 1.5em;
+
+                        font-size: 2.5em;
+                        font-weight: bold;
+                    }
+
+                    .main-section>.left-content p.left-paragraph {
+                        font-size: medium;
+                    }
+
+                    .jobs-card-container {
+                        display: grid;
+                        gap: 1em;
+                        grid-template-columns: auto auto auto;
+                        border: 1px solid red;
+                    }
+                }
+
+                /* END FOUNDATION MEDIA QUERIES */
+
+                /* ---------------------------- */
+
+                /* General Style */
+                /* Main Section Container */
+                section.main-section {
+                    border: none;
+                }
+
+                /* End; */
+
+                /* --- */
+
+                /* Left-Content */
+                .main-section>.left-content {
+                    border: none;
+                }
+
+                .main-section>.left-content button.find-job {
+                    margin-top: 1.5em;
                     padding: 1em 3em;
+
+                    border-radius: 0.5em;
+
                     background-color: #06816d;
+
                     transition: margin-left 0.5s;
-                    border-radius: 0.3em;
                 }
 
-                button.find-job:hover {
+                .main-section>.left-content button.find-job:hover {
                     margin-left: 1em;
-                    background-color: #06816d;
+                    background-color: #056454;
                 }
 
-                /* section.main-section {
-                    height: 100vh;
-                } */
+                /* End; */
 
-                .main-section>.left-content>div>.left-paragraph {
-                    /* padding-right: 14em; */
-                    color: rgb(116, 116, 116);
-                    font-weight: bold;
-                }
+                /* ---- */
 
-                .main-section>.right-content>div>ul>li>a {
-                    color: darkgray !important;
-                    font-size: smaller;
-                }
-
-                .main-section>.right-content>div>ul>li>a:hover {
+                /* Right-Content */
+                .main-section>.right-content a {
+                    font-size: small;
                     font-weight: normal;
+
+                    color: darkgray !important;
                 }
 
-                .main-section>.right-content>div>ul>li>a>span {
-                    color: #06816d;
+                .main-section>.right-content ul.menu.date-posted>li>a {
+                    color: #06816d !important;
+
+                    transition: margin-left 0.5s;
+                }
+
+                .main-section>.right-content ul.menu.date-posted>li>a:hover {
+                    margin-left: 0.5em;
+
                     font-weight: bold;
                 }
 
-                .main-section .date-posted {
+                .main-section>.right-content .post-information>a>span {
+                    font-weight: bold;
+
+                    color: #056454;
+                }
+
+                /* End; */
+
+                /* ---- */
+
+                /* Job-Card */
+                section.jobs-card {}
+
+                .jobs-card>.jobs-card-title {
+                    margin-bottom: 1em;
+                }
+
+                .jobs-card-content .job-card-item {
+                    padding: 0.5em 1em;
+
+                    border-radius: 0.4em;
+
+                    background-color: #faf6f5;
+                }
+
+                .job-item-header {
+                    margin-top: 0.5em;
+                }
+
+                .job-item-header>.company-logos {
+                    width: 3em;
+
+                    border-color: transparent;
+                }
+
+                .job-item-header>.post-date {
                     font-size: small;
                 }
 
-                .main-section .right-content .image-container {
-                    height: max-content;
-                }
-
-                .main-section .right-content .image-container img {
-                    height: 25em;
-                }
-
-                .job-card-item {
-                    background-color: #f8e4bd;
-                    border-radius: 0.5em;
-                }
-
-                .jobs-card .jobs-card-title {
-                    font-weight: bolder;
-                }
-
-                .jobs-card-content .company-logos.card {
-                    width: 3em;
-                    /* height: 4em; */
-                }
-
-                .jobs-card-content .job-info>span {
+                .job-item-title>.job-info {
                     font-size: smaller;
                 }
 
-                .label {
-                    border-radius: 0.5em;
+                .job-category-badges>.label {
+                    width: auto;
+
+                    border-radius: 0.4em;
+
+                    font-size: x-small;
+                    text-align: center;
                 }
 
                 .job-work-place>p {
+                    margin-top: 0.5em;
+
                     font-size: small;
                 }
 
-                .job-description {
-                    font-size: smaller;
+                .job-description>p {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 4;
+
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: small;
                 }
 
-                .jobs-card-content button.button {
-                    border-radius: 0.5em;
+                .job-button button {
                     width: 100%;
+
+                    border-radius: 0.4em;
                 }
 
-                .apply-btn {
+                .job-button button.apply-btn {
                     background-color: #06816d;
                 }
 
-                .apply-btn:hover {
+                .job-button button.apply-btn:hover {
                     background-color: #056454;
                 }
+
+                /* Badges-Color Based on Category */
+                span.full-time {
+                    background-color: forestgreen;
+                }
+
+                span.part-time {
+                    background-color: orange;
+                }
+
+                span.volunteering {
+                    background-color: teal;
+                }
+
+                span.project-work {
+                    background-color: slategray;
+                }
+
+                span.internship {
+                    background-color: coral;
+                }
+
+                /* End; */
+
+                /* End; */
+
+                /* End General Style */
             </style>
-            <div class="grid-container full padding-3" style="display: none;">
-                <section class="main-section grid-x ">
-                    <div class="left-content cell  large-6 grid-y flex-container">
-                        <div class="cell  left-title flex-child-shrink">
-                            <h2>
-                                <strong>Find your dream job</strong>
-                            </h2>
+            <div class="grid-container full padding-3">
+                <section class="main-section grid-x" style="border: 1px solid red;">
+                    <div class="left-content cell large-6 grid-y flex-container" style="border: 1px solid red;">
+                        <div class="cell left-title flex-child-shrink">
+                            <p>
+                                Find your dream job
+                            </p>
                         </div>
                         <div class="cell flex-child-shrink">
-                            <p class="left-paragraph padding-top-3">
+                            <p class="left-paragraph">
                                 Our mission is to help entrepreneurs and innovators shape the world through
                                 beautiful
                                 software.
@@ -114,18 +270,18 @@
                                 time employee, great - you can apply right away.
                             </p>
                         </div>
-                        <div class="cell  left-button padding-top-3 flex-child-grow">
+                        <div class="cell left-button flex-child-grow">
                             <button class="find-job button">Find Job</button>
                         </div>
                     </div>
-                    <div class="right-content cell large-6 grid-y">
+                    <div class="right-content cell large-6 grid-y" style="border: 1px solid red;">
                         <div class="cell">
                             <ul class="dropdown menu flex-container align-right" data-dropdown-menu>
-                                <li class="">
+                                <li class="post-information">
                                     <a class="" href="" style="width: 15em;">Sort by <span>Last Posted</span></a>
                                     <ul class="menu date-posted">
-                                        <li><a href="">January 31, 2023, at 12:30 PM UTC</a></li>
-                                        <li><a href="">December 21, 2023, at 14:00 PM UTC</a></li>
+                                        <li><a href="">January 31, 2023</a></li>
+                                        <li><a href="">December 21, 2023</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -136,15 +292,18 @@
                     </div>
                 </section>
                 <!-- JOBS CARD -->
-                <section class="jobs-card ">
+                <section class="jobs-card">
                     <div class="jobs-card-title ">
                         <h6><strong>Recommended Jobs</strong></h6>
                     </div>
                     <div class="jobs-card-content grid-container full ">
                         <!-- JOBS CARD CONTAINER -->
-                        <div class="grid-x grid-margin-x grid-margin-y medium-up-2 large-up-3">
+                        <div class="jobs-card-container">
                             <!-- JOBS CARD ITEM -->
                             <%- include('../components/jobcard') %>
+                                <%- include('../components/jobcard') %>
+                                    <%- include('../components/jobcard') %>
+                                        <%- include('../components/jobcard') %>
                         </div>
                     </div>
                 </section>

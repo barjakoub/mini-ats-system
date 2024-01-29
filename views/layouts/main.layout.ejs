@@ -27,39 +27,22 @@
         @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
 
         /* END FOUNDATION MEDIA SCREEN */
-
-        /* MAIN LAYOUT STYLE */
-        .stick-navigate {
-            position: fixed;
-            top: 0;
-        }
-
-        /* END MAIN LAYOUT STYLE */
-        @media screen and (max-width: 850px) {
-            .main-layout {
-                display: flex;
-            }
-
-            .content {
-                background-color: green;
-            }
-        }
     </style>
 </head>
 
 <body>
     <!-- NAV HEADER -->
-    <header>
+    <header style="position: sticky; top: 0; z-index: 1;">
         <%- defineContent('navigation') %>
     </header>
     <!-- MAIN CONTENT -->
     <main class="">
         <!-- NOTE: defineContent('_NAME') is optional behavior, would not cause an error, whereas direct write '_NAME' will cause an error because that behave mandatory element -->
-        <div class="main-layout grid-x grid-container full bordered">
-            <div class="cell sidebar medium-3 large-3 border-box">
+        <div class="main-layout grid-x grid-container full">
+            <div class="cell sidebar large-3 border-box">
                 <%- defineContent('sidebar') %>
             </div>
-            <div class="cell content medium-12 large-9">
+            <div class="cell content large-9">
                 <%- defineContent('content') %>
             </div>
         </div>
@@ -70,7 +53,7 @@
     </footer>
     <!-- foundation => css with protoype: true; & js bundle -->
     <script src="/xbcvbx/webpack/foundation.webpack.js"></script>
-    <script src="/xbcvbx/js/app.js"></script>
+    <!-- <script src="/xbcvbx/js/app.js"></script> -->
 </body>
 
 </html>
