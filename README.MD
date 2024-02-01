@@ -31,9 +31,9 @@ UI References from Dribbble:
 
 ##### Slicing Results
 
-    ![Preview 1](https://raw.githubusercontent.com/barjakoub/mini-ats-system/main/public/images/preview/ats-preview-1.png)
-    ![Preview 2](https://raw.githubusercontent.com/barjakoub/mini-ats-system/main/public/images/preview/ats-preview-2.png)
-    ![Preview 3](https://raw.githubusercontent.com/barjakoub/mini-ats-system/main/public/images/preview/ats-preview-3.png)
+![Preview 1](https://raw.githubusercontent.com/barjakoub/mini-ats-system/main/public/images/preview/ats-preview-1.png)
+![Preview 2](https://raw.githubusercontent.com/barjakoub/mini-ats-system/main/public/images/preview/ats-preview-2.png)
+![Preview 3](https://raw.githubusercontent.com/barjakoub/mini-ats-system/main/public/images/preview/ats-preview-3.png)
 
 ---
 
