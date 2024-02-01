@@ -25,10 +25,11 @@ The main purpose of making this project is to facilitate students at Politeknik 
 
 UI References from Dribbble:
 
-![Dribble Main Page](https://dribbble.com/shots/17020938-Job-Search-Platform/attachments/12103013?mode=media)
+1. [Main page](https://dribbble.com/shots/17020938-Job-Search-Platform)
+2. [Job Details](https://dribbble.com/shots/22777612-WerkLinker-Job-Finder-Job-Detail-Page)
     
 
-- Slicing Results
+##### Slicing Results
 
     ![Preview 1](https://raw.githubusercontent.com/barjakoub/mini-ats-system/main/public/images/preview/ats-preview-1.png)
     ![Preview 2](https://raw.githubusercontent.com/barjakoub/mini-ats-system/main/public/images/preview/ats-preview-2.png)
