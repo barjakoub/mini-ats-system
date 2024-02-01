@@ -25,12 +25,7 @@ The main purpose of making this project is to facilitate students at Politeknik 
 
 UI References from Dribbble:
 
-1. Main page
-
-    <iframe src="https://codepen.io/team/codepen/embed/preview/PNaGbb" style="width:100%; height:300px;"></iframe>
-
-2. Jobs Details
-
+![Dribble Main Page](https://dribbble.com/shots/17020938-Job-Search-Platform/attachments/12103013?mode=media)
     
 
 - Slicing Results
