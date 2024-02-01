@@ -27,15 +27,17 @@ UI References from Dribbble:
 
 1. Main page
 
-    <iframe src="https://dribbble.com/shots/17020938-Job-Search-Platform/attachments/12103013?mode=media" width="600" height="400"></iframe>
+    <iframe src="https://codepen.io/team/codepen/embed/preview/PNaGbb" style="width:100%; height:300px;"></iframe>
 
 2. Jobs Details
 
-    <iframe src="https://dribbble.com/shots/22777612-WerkLinker-Job-Finder-Job-Detail-Page" width="600" height="400"></iframe>
+    
 
 - Slicing Results
 
-    --- place image here ---
+    ![Preview 1](https://raw.githubusercontent.com/barjakoub/mini-ats-system/main/public/images/preview/ats-preview-1.png)
+    ![Preview 2](https://raw.githubusercontent.com/barjakoub/mini-ats-system/main/public/images/preview/ats-preview-2.png)
+    ![Preview 3](https://raw.githubusercontent.com/barjakoub/mini-ats-system/main/public/images/preview/ats-preview-3.png)
 
 ---
 
