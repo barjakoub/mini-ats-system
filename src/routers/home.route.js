@@ -6,9 +6,19 @@ import express from 'express';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render(`pages/index`, { pageTitle: `Mini - ATS` });
+    res.render(`pages/index`, { pageTitle: `Mini - ATS`, data: {name: `Fatkhur`} });
 }).get('/component', (req, res) => {
-    res.render(`example`, { layout: `layouts/example.layout.ejs`, pageTitle: `Example Component` });
+    const data = {
+        layout: false,
+        pageTitle: `Custom Delimiter`,
+        title: `Example of Using Custom Delimiter in EJS`,
+        items: [
+            `Canelo Alvarez`,
+            `Thiago Silva`,
+            `Ecma Script`
+        ]
+    };
+    res.render(`example`, data);
 });
 
 export default router;

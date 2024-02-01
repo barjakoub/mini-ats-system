@@ -9,6 +9,7 @@ import staticFilesOptions from './config/static-files.js';
 /**
  * template engine
  */
+import ejs from 'ejs';
 import ejsLayouts from 'express-ejs-layouts';
 /**
  * routes
@@ -23,6 +24,7 @@ const app = express();
 /**
  * Specify view engine and directory of pages ./views
  */
+ejs.delimiter = `?`; // Set default delimiter to "?"
 app.set(`view engine`, `ejs`);
 app.set(`views`, `./views`);
 

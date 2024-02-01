@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= pageTitle %>
+        <?= pageTitle ?>
     </title>
     <link rel="shortcut icon"
         href="/xbcvbx/svg/job-employment-business-recuitment-seeker-applicant-work-svgrepo-com.svg" type="image/x-icon">
@@ -33,17 +33,17 @@
 <body>
     <!-- NAV HEADER -->
     <header style="position: sticky; top: 0; z-index: 1;">
-        <%- defineContent('navigation') %>
+        <?- defineContent('navigation') ?>
     </header>
     <!-- MAIN CONTENT -->
     <main class="">
         <!-- NOTE: defineContent('_NAME') is optional behavior, would not cause an error, whereas direct write '_NAME' will cause an error because that behave mandatory element -->
         <div class="main-layout grid-x grid-container full">
             <div class="cell sidebar large-3 border-box">
-                <%- defineContent('sidebar') %>
+                <?- defineContent('sidebar') ?>
             </div>
             <div class="cell content large-9">
-                <%- defineContent('content') %>
+                <?- defineContent('content') ?>
             </div>
         </div>
     </main>
@@ -53,7 +53,7 @@
     </footer>
     <!-- foundation => css with protoype: true; & js bundle -->
     <script src="/xbcvbx/webpack/foundation.webpack.js"></script>
-    <!-- <script src="/xbcvbx/js/app.js"></script> -->
+    <script src="/xbcvbx/js/app.js"></script>
 </body>
 
 </html>

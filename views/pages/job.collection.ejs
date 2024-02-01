@@ -1,0 +1,132 @@
+<?- include('../components/navigation') ?>
+<?- include('../components/sidebar') ?>
+<?- contentFor('content') ?>
+<style>
+    /* Foundation Media Queries */
+    /* Small only */
+    @media screen and (max-width: 39.9375em) {
+
+        /* Jobcard */
+        .jobs-card-container {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: auto;
+        }
+
+        /* Jobs Header Navigation */
+        .short-jobs-oldest-latest {
+            justify-content: end;
+        }
+
+        .oldest-to-latest {
+            margin-right: 1em;
+        }
+    }
+
+    /* Medium and up */
+    @media screen and (min-width: 40em) {
+
+        /* Jobcard */
+        .jobs-card-container {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: auto auto;
+        }
+    }
+
+    /* Medium only */
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+        /* Jobs Header Navigation */
+        .short-jobs-oldest-latest {
+            justify-content: end;
+        }
+
+        .oldest-to-latest {
+            margin-right: 1em;
+        }
+    }
+
+    /* Large and up */
+    @media screen and (min-width: 64em) {
+
+        /* Jobcard */
+        .jobs-card-container {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: auto auto;
+        }
+
+        /* Jobs Header Navigation */
+        .jobs-header-navigation {
+            display: grid;
+            grid-template-columns: 10fr 4fr;
+        }
+    }
+
+    /* Large only */
+    @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+    /* X-Large up */
+    @media screen and (min-width: 75em) {
+
+        /* Jobcard */
+        .jobs-card-container {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: auto auto auto;
+        }
+
+        /* Jobs Header Navigation */
+        .jobs-header-navigation {
+            display: grid;
+            grid-template-columns: 10fr 3fr;
+        }
+
+    }
+
+    /* End Media Queries */
+
+    /* ----------------- */
+
+    /* General Style */
+    /* ----- put your general styles here ----- */
+    /* Short Jobs Navigation */
+    .oldest-to-latest>span {
+        font-size: small;
+
+        color: #1779ba;
+    }
+
+    /* End General */
+</style>
+<div class="grid-container full padding-3">
+    <section class="job-collection <?= hideElement() ? 'hide' : '' ?>">
+        <div class="jobs-header-navigation align-spaced">
+            <div class="breadcrumbs-container">
+                <ul class="breadcrumbs" style="margin-bottom: 0;">
+                    <li><a href="#">Home</a></li>
+                    <li><a class="" href="#">Jobs</a></li>
+                    <li><a class="disabled" href="">Details</a></li>
+                </ul>
+            </div>
+            <div class="short-jobs-oldest-latest flex-container align-justify">
+                <div class="oldest-to-latest">
+                    <span>Switch to <strong>latest</strong> jobs</span>
+                </div>
+                <div class="switch tiny rounded" style="margin-bottom: 0;">
+                    <input class="switch-input" id="exampleSwitch" type="checkbox" name="exampleSwitch">
+                    <label class="switch-paddle" for="exampleSwitch">
+                        <span class="show-for-sr">Download Kittens</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="jobs-card-container margin-top-1">
+            <?- include('../components/jobcard') ?>
+            <?- include('../components/jobcard') ?>
+            <?- include('../components/jobcard') ?>
+            <?- include('../components/jobcard') ?>
+        </div>
+    </section>
+</div>

@@ -1,136 +1,138 @@
-<%- contentFor('sidebar') %>
-    <style>
-        /* FOUNDATION MEDIA SCREEN */
-        /* Small only */
-        @media screen and (max-width: 39.9375em) {
-            aside#sidebar-filtering {
-                display: none;
-            }
-        }
-
-        /* Medium and up */
-        @media screen and (min-width: 40em) {}
-
-        /* Medium only */
-        @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-            aside#sidebar-filtering {
-                display: none;
-            }
-        }
-
-        /* Large and up */
-        @media screen and (min-width: 64em) {
-            aside#sidebar-filtering {
-                padding-top: 2em;
-                padding-bottom: 2em;
-                padding-left: 2.5em;
-            }
-
-            .sidebar-title>span {
-                font-size: larger;
-            }
-        }
-
-        /* Large only */
-        @media screen and (min-width: 64em) and (max-width: 74.9375em) {
-            aside#sidebar-filtering {
-                padding-top: 2em;
-                padding-bottom: 2em;
-                padding-left: 2.5em;
-            }
-        }
-
-        /* END FOUNDATION MEDIA SCREEN */
-
-        /* --------------------------- */
-
-        /* GENERAL STYLE */
-        /* Sidebar Container -> </aside> */
+<?- contentFor('sidebar') ?>
+<style>
+    /* FOUNDATION MEDIA SCREEN */
+    /* Small only */
+    @media screen and (max-width: 39.9375em) {
         aside#sidebar-filtering {
-            height: 100vh;
-
-            position: sticky;
-            top: 3.5em;
-
-            background-color: #fbfaf8;
-        }
-
-        .button-apply-container>button {
-            border-radius: 0.5em;
-
-            background-color: #06816d;
-        }
-
-        .button-apply-container>button:hover {
-            background-color: #066454;
-        }
-
-        /* End; */
-
-        /* ------------------------------- */
-
-        /* input[checkbox] & checkmark box */
-        input[type="checkbox"] {
-            visibility: hidden;
-        }
-
-        input[type="checkbox"]+label {
-            padding-left: 0.5em;
-        }
-
-        .form-checkbox {
-            flex-direction: row-reverse;
-            justify-content: start;
-            align-items: center;
-        }
-
-        .form-checkbox:hover input[type="checkbox"]~.checkmark {
-            background-color: lightgray;
-        }
-
-        .form-checkbox input[type="checkbox"]:checked~.checkmark {
-            background-color: #06816d;
-        }
-
-        .form-checkbox input[type="checkbox"]:checked~.checkmark::after {
-            display: block;
-        }
-
-        .form-checkbox input[type="checkbox"]:checked~.checkmark {
-            border: none;
-        }
-
-        .checkmark {
-            width: 20px;
-            height: 20px;
-
-            /* position: absolute; */
-
-            border: 0.02em solid darkgray;
-            border-radius: 0.2em;
-        }
-
-
-        .checkmark::after {
             display: none;
-            content: url('/xbcvbx/svg/check-marks-svgrepo-com.svg');
+        }
+    }
 
-            /* position: absolute; */
+    /* Medium and up */
+    @media screen and (min-width: 40em) {}
 
-            font-size: large;
+    /* Medium only */
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+        aside#sidebar-filtering {
+            display: none;
+        }
+    }
+
+    /* Large and up */
+    @media screen and (min-width: 64em) {
+        aside#sidebar-filtering {
+            padding-top: 2em;
+            padding-bottom: 2em;
+            padding-left: 14%;
         }
 
-        /* End; */
-        /* END GENERAL STYLE */
-    </style>
-    <!-- FIX THIS STYLE -->
-    <aside class="grid-y grid-frame cell-block-container" id="sidebar-filtering" style="border: 1px solid red;">
-        <div class="cell sidebar-title">
-            <span>
-                <strong>Details</strong>
-            </span>
-        </div>
-        <div class="cell-block-y">
-            <%- include('sidebar.filter.items.ejs') %>
-        </div>
-    </aside>
+        .sidebar-title>span {
+            font-size: larger;
+        }
+    }
+
+    /* Large only */
+    @media screen and (min-width: 64em) and (max-width: 74.9375em) {
+        aside#sidebar-filtering {
+            padding-top: 2em;
+            padding-bottom: 2em;
+            padding-left: 2.5em;
+        }
+    }
+
+    /* END FOUNDATION MEDIA SCREEN */
+
+    /* --------------------------- */
+
+    /* GENERAL STYLE */
+    /* Sidebar Container -> </aside> */
+    aside#sidebar-filtering {
+        height: 100vh;
+
+        position: sticky;
+        top: 3.5em;
+
+        background-color: #fbfaf8;
+    }
+
+    .button-apply-container>button {
+        margin-bottom: 5em;
+
+        border-radius: 0.5em;
+
+        background-color: #06816d !important;
+    }
+
+    .button-apply-container>button:hover {
+        background-color: #066454 !important;
+    }
+
+    /* End; */
+
+    /* ------------------------------- */
+
+    /* input[checkbox] & checkmark box */
+    input[type="checkbox"] {
+        visibility: hidden;
+    }
+
+    input[type="checkbox"]+label {
+        padding-left: 0.5em;
+    }
+
+    .form-checkbox {
+        flex-direction: row-reverse;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .form-checkbox:hover input[type="checkbox"]~.checkmark {
+        background-color: lightgray;
+    }
+
+    .form-checkbox input[type="checkbox"]:checked~.checkmark {
+        background-color: #06816d;
+    }
+
+    .form-checkbox input[type="checkbox"]:checked~.checkmark::after {
+        display: block;
+    }
+
+    .form-checkbox input[type="checkbox"]:checked~.checkmark {
+        border: none;
+    }
+
+    .checkmark {
+        width: 20px;
+        height: 20px;
+
+        /* position: absolute; */
+
+        border: 0.02em solid darkgray;
+        border-radius: 0.2em;
+    }
+
+
+    .checkmark::after {
+        display: none;
+        content: url('/xbcvbx/svg/check-marks-svgrepo-com.svg');
+
+        /* position: absolute; */
+
+        font-size: large;
+    }
+
+    /* End; */
+    /* END GENERAL STYLE */
+</style>
+<!-- Sidebar -->
+<aside class="grid-y grid-frame cell-block-container" id="sidebar-filtering">
+    <div class="cell sidebar-title">
+        <span>
+            <strong>Details</strong>
+        </span>
+    </div>
+    <div class="cell-block-y" id="sidebar-items-container">
+        <div id="filter-items-container"><?- include('sidebar.filter.items.ejs') ?></div>
+    </div>
+</aside>

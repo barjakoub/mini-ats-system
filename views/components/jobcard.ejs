@@ -33,8 +33,101 @@
             grid-template-columns: 1fr;
         }
     }
+
+    /* Jobcard Styles */
+    .jobs-card>.jobs-card-title {
+        margin-bottom: 1em;
+    }
+
+    .job-card-item {
+        padding: 0.5em 1em;
+
+        border-radius: 0.4em;
+
+        background-color: #faf6f5;
+    }
+
+    .job-item-header {
+        margin-top: 0.5em;
+    }
+
+    .job-item-header>.company-logos {
+        width: 3em;
+
+        border-color: transparent;
+    }
+
+    .job-item-header>.post-date {
+        font-size: small;
+    }
+
+    .job-item-title>.job-info {
+        font-size: smaller;
+    }
+
+    .job-category-badges>.label {
+        width: auto;
+
+        border-radius: 0.4em;
+
+        font-size: x-small;
+        text-align: center;
+    }
+
+    .job-work-place>p {
+        margin-top: 0.5em;
+
+        font-size: small;
+    }
+
+    .job-description>p {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: small;
+    }
+
+    .job-button button {
+        width: 100%;
+
+        border-radius: 0.4em;
+    }
+
+    .job-button button.apply-btn {
+        background-color: #06816d;
+    }
+
+    .job-button button.apply-btn:hover {
+        background-color: #056454;
+    }
+
+    /* Badges-Color Based on Category */
+    span.full-time {
+        background-color: forestgreen;
+    }
+
+    span.part-time {
+        background-color: orange;
+    }
+
+    span.volunteering {
+        background-color: teal;
+    }
+
+    span.project-work {
+        background-color: slategray;
+    }
+
+    span.internship {
+        background-color: coral;
+    }
+
+    /* End; */
 </style>
-<div class="cell job-card-item grid-y" style="border: 1px solid red;">
+<div class="cell job-card-item grid-y bordered">
     <div class="job-item-header cell grid-x align-middle medium-up-2">
         <div class="cell company-logos card flex-child-shrink rounded">
             <img src="/xbcvbx/images/forbes-logo-svgrepo-com.svg" alt="">

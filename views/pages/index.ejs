@@ -1,310 +1,222 @@
-<!-- including top navigation page => components/navigation.ejs -->
-<%- include('../components/navigation') %>
-    <%- include('../components/sidebar') %>
-        <%- contentFor('content') %>
-            <style>
-                /* FOUNDATION MEDIA QUERIES */
-                /* Small only */
-                @media screen and (max-width: 39.9375em) {
-                    .main-section>.left-content>.left-title>p {
-                        font-size: 1.5em;
-                        font-weight: bold;
-                    }
+<?- include('../components/navigation') ?>
+<?- include('../components/sidebar') ?>
+<?- contentFor('content') ?>
+<style>
+    /* FOUNDATION MEDIA QUERIES */
+    /* Small only */
+    @media screen and (max-width: 39.9375em) {
+        .main-section>.left-content>.left-title>p {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
 
-                    .jobs-card-container {
-                        display: grid;
-                        gap: 1em;
-                        grid-template-columns: auto;
-                        border: 1px solid red;
-                    }
-                }
+        .jobs-card-container {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: auto;
+        }
+    }
 
-                /* Medium and up */
-                @media screen and (min-width: 40em) {
-                    .jobs-card-container {
-                        display: grid;
-                        gap: 1em;
-                        grid-template-columns: auto auto;
-                        border: 1px solid red;
-                    }
-                }
+    /* Medium and up */
+    @media screen and (min-width: 40em) {
+        .jobs-card-container {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: auto auto;
+        }
+    }
 
-                /* Medium only */
-                @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-                    .main-section>.left-content>.left-title>p {
-                        font-size: 2em;
-                        font-weight: bold;
-                    }
-                }
+    /* Medium only */
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+        .main-section>.left-content>.left-title>p {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    }
 
-                /* Large and up */
-                @media screen and (min-width: 64em) {
-                    .jobs-card-container {
-                        display: grid;
-                        gap: 1em;
-                        grid-template-columns: auto auto;
-                        border: 1px solid red;
-                    }
-                }
+    /* Large and up */
+    @media screen and (min-width: 64em) {
+        .jobs-card-container {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: auto auto;
+        }
+    }
 
-                /* Large only */
-                @media screen and (min-width: 64em) and (max-width: 74.9375em) {
-                    .main-section>.left-content>.left-title>p {
-                        margin-bottom: 1.5em;
+    /* Large only */
+    @media screen and (min-width: 64em) and (max-width: 74.9375em) {
+        .main-section>.left-content>.left-title>p {
+            margin-bottom: 1.5em;
 
-                        font-size: 2em;
-                        font-weight: bold;
-                    }
+            font-size: 2em;
+            font-weight: bold;
+        }
 
-                    .main-section>.left-content p.left-paragraph {
-                        font-size: 0.9em;
-                    }
-                }
+        .main-section>.left-content p.left-paragraph {
+            font-size: 0.9em;
+        }
+    }
 
-                /* X-Large up */
-                @media screen and (min-width: 75em) {
-                    .main-section>.left-content>.left-title>p {
-                        margin-bottom: 1.5em;
+    /* X-Large up */
+    @media screen and (min-width: 75em) {
+        section.main-section {
+            align-items: center;
+        }
 
-                        font-size: 2.5em;
-                        font-weight: bold;
-                    }
+        .main-section>.left-content>.left-title>p {
+            margin-bottom: 1.5em;
 
-                    .main-section>.left-content p.left-paragraph {
-                        font-size: medium;
-                    }
+            font-size: 2.5em;
+            font-weight: bold;
+        }
 
-                    .jobs-card-container {
-                        display: grid;
-                        gap: 1em;
-                        grid-template-columns: auto auto auto;
-                        border: 1px solid red;
-                    }
-                }
+        .main-section>.left-content p.left-paragraph {
+            font-size: medium;
+        }
 
-                /* END FOUNDATION MEDIA QUERIES */
+        .jobs-card-container {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: auto auto auto;
+        }
+    }
 
-                /* ---------------------------- */
+    /* END FOUNDATION MEDIA QUERIES */
 
-                /* General Style */
-                /* Main Section Container */
-                section.main-section {
-                    border: none;
-                }
+    /* ---------------------------- */
 
-                /* End; */
+    /* General Style */
+    /* Main Section Container */
+    section.main-section {
+        border: none;
+    }
 
-                /* --- */
+    /* End; */
 
-                /* Left-Content */
-                .main-section>.left-content {
-                    border: none;
-                }
+    /* --- */
 
-                .main-section>.left-content button.find-job {
-                    margin-top: 1.5em;
-                    padding: 1em 3em;
+    /* Left-Content */
+    .main-section>.left-content {
+        border: none;
+    }
 
-                    border-radius: 0.5em;
+    .main-section>.left-content button.find-job {
+        margin-top: 1.5em;
+        padding: 1em 3em;
 
-                    background-color: #06816d;
+        border-radius: 0.5em;
 
-                    transition: margin-left 0.5s;
-                }
+        background-color: #06816d;
 
-                .main-section>.left-content button.find-job:hover {
-                    margin-left: 1em;
-                    background-color: #056454;
-                }
+        transition: margin-left 0.5s;
+    }
 
-                /* End; */
+    .main-section>.left-content button.find-job:hover {
+        margin-left: 1em;
+        background-color: #056454;
+    }
 
-                /* ---- */
+    /* End; */
 
-                /* Right-Content */
-                .main-section>.right-content a {
-                    font-size: small;
-                    font-weight: normal;
+    /* ---- */
 
-                    color: darkgray !important;
-                }
+    /* Right-Content */
+    .main-section>.right-content a {
+        font-size: small;
+        font-weight: normal;
 
-                .main-section>.right-content ul.menu.date-posted>li>a {
-                    color: #06816d !important;
+        color: darkgray !important;
+    }
 
-                    transition: margin-left 0.5s;
-                }
+    .main-section>.right-content ul.menu.date-posted>li>a {
+        color: #06816d !important;
 
-                .main-section>.right-content ul.menu.date-posted>li>a:hover {
-                    margin-left: 0.5em;
+        transition: margin-left 0.5s;
+    }
 
-                    font-weight: bold;
-                }
+    .main-section>.right-content ul.menu.date-posted>li>a:hover {
+        margin-left: 0.5em;
 
-                .main-section>.right-content .post-information>a>span {
-                    font-weight: bold;
+        font-weight: bold;
+    }
 
-                    color: #056454;
-                }
+    .main-section>.right-content .post-information>a>span {
+        font-weight: bold;
 
-                /* End; */
+        color: #056454;
+    }
 
-                /* ---- */
+    /* End; */
 
-                /* Job-Card */
-                section.jobs-card {}
+    /* ---- */
 
-                .jobs-card>.jobs-card-title {
-                    margin-bottom: 1em;
-                }
+    /* Job-Card */
+    section.jobs-card {
+        margin-top: 1em;
+    }
 
-                .jobs-card-content .job-card-item {
-                    padding: 0.5em 1em;
+    /* End; */
 
-                    border-radius: 0.4em;
-
-                    background-color: #faf6f5;
-                }
-
-                .job-item-header {
-                    margin-top: 0.5em;
-                }
-
-                .job-item-header>.company-logos {
-                    width: 3em;
-
-                    border-color: transparent;
-                }
-
-                .job-item-header>.post-date {
-                    font-size: small;
-                }
-
-                .job-item-title>.job-info {
-                    font-size: smaller;
-                }
-
-                .job-category-badges>.label {
-                    width: auto;
-
-                    border-radius: 0.4em;
-
-                    font-size: x-small;
-                    text-align: center;
-                }
-
-                .job-work-place>p {
-                    margin-top: 0.5em;
-
-                    font-size: small;
-                }
-
-                .job-description>p {
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 4;
-
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    font-size: small;
-                }
-
-                .job-button button {
-                    width: 100%;
-
-                    border-radius: 0.4em;
-                }
-
-                .job-button button.apply-btn {
-                    background-color: #06816d;
-                }
-
-                .job-button button.apply-btn:hover {
-                    background-color: #056454;
-                }
-
-                /* Badges-Color Based on Category */
-                span.full-time {
-                    background-color: forestgreen;
-                }
-
-                span.part-time {
-                    background-color: orange;
-                }
-
-                span.volunteering {
-                    background-color: teal;
-                }
-
-                span.project-work {
-                    background-color: slategray;
-                }
-
-                span.internship {
-                    background-color: coral;
-                }
-
-                /* End; */
-
-                /* End; */
-
-                /* End General Style */
-            </style>
-            <div class="grid-container full padding-3">
-                <section class="main-section grid-x" style="border: 1px solid red;">
-                    <div class="left-content cell large-6 grid-y flex-container" style="border: 1px solid red;">
-                        <div class="cell left-title flex-child-shrink">
-                            <p>
-                                Find your dream job
-                            </p>
-                        </div>
-                        <div class="cell flex-child-shrink">
-                            <p class="left-paragraph">
-                                Our mission is to help entrepreneurs and innovators shape the world through
-                                beautiful
-                                software.
-                                <br>
-                                We offer a safe, inclusive and productive environment for all team members. If you
-                                want
-                                to work from home and be a full
-                                time employee, great - you can apply right away.
-                            </p>
-                        </div>
-                        <div class="cell left-button flex-child-grow">
-                            <button class="find-job button">Find Job</button>
-                        </div>
-                    </div>
-                    <div class="right-content cell large-6 grid-y" style="border: 1px solid red;">
-                        <div class="cell">
-                            <ul class="dropdown menu flex-container align-right" data-dropdown-menu>
-                                <li class="post-information">
-                                    <a class="" href="" style="width: 15em;">Sort by <span>Last Posted</span></a>
-                                    <ul class="menu date-posted">
-                                        <li><a href="">January 31, 2023</a></li>
-                                        <li><a href="">December 21, 2023</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="cell card padding-top-2" style="border: none;">
-                            <img class="" src="/xbcvbx/images/main-section.png" alt="">
-                        </div>
-                    </div>
-                </section>
-                <!-- JOBS CARD -->
-                <section class="jobs-card">
-                    <div class="jobs-card-title ">
-                        <h6><strong>Recommended Jobs</strong></h6>
-                    </div>
-                    <div class="jobs-card-content grid-container full ">
-                        <!-- JOBS CARD CONTAINER -->
-                        <div class="jobs-card-container">
-                            <!-- JOBS CARD ITEM -->
-                            <%- include('../components/jobcard') %>
-                                <%- include('../components/jobcard') %>
-                                    <%- include('../components/jobcard') %>
-                                        <%- include('../components/jobcard') %>
-                        </div>
-                    </div>
-                </section>
+    /* End General Style */
+</style>
+<div class="grid-container full padding-3">
+    <section class="main-section grid-x">
+        <div class="left-content cell large-6 grid-y flex-container">
+            <div class="cell left-title flex-child-shrink">
+                <p>
+                    Find your dream job
+                </p>
             </div>
+            <div class="cell flex-child-shrink">
+                <p class="left-paragraph">
+                    Our mission is to help entrepreneurs and innovators shape the world
+                    through
+                    beautiful
+                    software.
+                    <br>
+                    We offer a safe, inclusive and productive environment for all team
+                    members. If you
+                    want
+                    to work from home and be a full
+                    time employee, great - you can apply right away.
+                </p>
+            </div>
+            <div class="cell left-button flex-child-grow">
+                <button class="find-job button" onclick="window.location.href='/jobs'">Find Job</button>
+            </div>
+        </div>
+        <div class="right-content cell large-6 grid-y">
+            <div class="cell">
+                <ul class="dropdown menu flex-container align-right" data-dropdown-menu>
+                    <li class="post-information">
+                        <a class="" href="" style="width: 15em;">Sort by <span>Last
+                                Posted</span></a>
+                        <ul class="menu date-posted">
+                            <li><a href="">January 31, 2023</a></li>
+                            <li><a href="">December 21, 2023</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="cell card padding-top-2" style="border: none;">
+                <img class="" src="/xbcvbx/images/main-section.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- JOBS CARD -->
+    <section class="jobs-card">
+        <div class="jobs-card-title ">
+            <h6><strong>Recommended Jobs</strong></h6>
+        </div>
+        <div class="jobs-card-content grid-container full ">
+            <!-- JOBS CARD CONTAINER -->
+            <div class="jobs-card-container">
+                <!-- JOBS CARD ITEM -->
+                <?- include('../components/jobcard') ?>
+                <?- include('../components/jobcard') ?>
+                <?- include('../components/jobcard') ?>
+                <?- include('../components/jobcard') ?>
+            </div>
+        </div>
+    </section>
+</div>

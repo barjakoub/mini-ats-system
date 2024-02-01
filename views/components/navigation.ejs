@@ -1,280 +1,315 @@
-<%- contentFor('navigation') %>
-    <style>
-        /* FOUNDATION MEDIA SCREEN */
-        /* Small only */
-        @media screen and (max-width: 39.99875em) {
+<?- contentFor('navigation') ?>
+<style>
+    /* FOUNDATION MEDIA SCREEN */
+    /* Small only */
+    @media screen and (max-width: 39.99875em) {
 
-            /* LARGE NAVIGATE */
-            .large-screen-navigate {
-                width: 10em;
-            }
-
-            .navigate-item {
-                display: none;
-            }
-
-            /* END LARGE NAVIGATE */
-            /* ------------------ */
-            /* SMALL NAVIGATE */
-            .small-screen-navigate {
-                display: block;
-            }
-
-            .small-navigate a {
-                font-size: small;
-            }
-
-            .small-navigate>ul {
-                display: flex;
-                /* no-gap */
-            }
-
-            .small-navigate>ul>li .small-navigate-text {
-                padding: 1em 0.5em;
-                font-size: small;
-            }
-
-            /* END SMALL NAVIGATE */
-            /* ------------------ */
-            /* NAVIGATION CONTAINER */
-            .top-navigate {
-                display: flex;
-                justify-content: space-between;
-
-                /* no-padding */
-            }
-
-            /* END NAVIGATION CONTAINER */
-            /* ------------------------ */
-            /* OFF-CANVAS */
-            .off-canvas-container>#more-filter-off-canvas {
-                width: 12.5em;
-                padding-left: 1em !important;
-            }
-
-            .off-canvas-header {
-                padding-left: 0em !important;
-                font-size: small !important;
-            }
-
-            .off-canvas-filter-form {
-                font-size: small;
-            }
-
-            /* END OFF-CANVAS */
+        /* LARGE NAVIGATE */
+        .large-screen-navigate {
+            width: 10em;
         }
 
-        /* Medium and up */
-        @media screen and (min-width: 40em) {}
-
-        /* Medium only */
-        @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-
-            /* SMALL NAVIGATE */
-            .small-screen-navigate {
-                display: block;
-            }
-
-            /* END SMALL NAVIGATE */
-            /* ================== */
-            /* LARGE NAVIGATE */
-            .large-screen-navigate {}
-
-            .navigate-item {
-                display: none;
-            }
-
-            /* END LARGE NAVIGATE */
-
-            .top-navigate {
-                display: flex;
-                justify-content: space-between;
-
-                padding: 0em 2.5em;
-            }
-
-            .small-navigate>ul {
-                display: flex;
-                justify-content: end;
-                gap: 2em;
-            }
-
-            .small-navigate li>a {
-                font-size: smaller;
-            }
-        }
-
-        /* Large and up */
-        @media screen and (min-width: 64em) {
-            .navigate-item>ul>li>a.menu-title {
-                width: 12.5em;
-            }
-        }
-
-        /* Large only */
-        @media screen and (min-width: 64em) and (max-width: 74.9375em) {
-
-            /* SMALL NAVIGATE */
-            .small-screen-navigate {
-                display: none;
-            }
-
-            /* END SMALL NAVIGATE */
-            /* ================== */
-            /* LARGE NAVIGATE */
-            .large-screen-navigate .menu-title {
-                font-size: small;
-            }
-
-            /* END LARGE NAVIGATE */
-        }
-
-        /* X-Large up */
-        @media screen and (min-width: 75em) {
-
-            /* LARGE NAVIGATE */
-            .large-screen-navigate .menu-title {
-                font-size: medium;
-            }
-
-            /* END LARGE NAVIGATE */
-            /* ================== */
-            /* SMALL NAVIGATE */
-            .small-screen-navigate {
-                display: none;
-            }
-
-            /* END SMALL NAVIGATE */
-        }
-
-        /* END FOUNDATION MEDIA SCREEN */
-        /* --------------------------- */
-
-        /* GENERAL STYLE */
-        /* Navigation Container */
-        nav.top-navigate {
-            padding-top: 0.5em;
-            padding-bottom: 0.5em;
-
-            /* position: sticky;
-            position: -webkit-sticky;
-            top: 0; */
-
-            background-color: #fbfaf8;
-        }
-
-        /* End; */
-
-        /* ---------------- */
-
-        /* Navigation Items */
         .navigate-item {
-            border: 1px solid red;
+            display: none;
         }
 
-        .navigate-item a {
-            color: #06816d !important;
+        /* END LARGE NAVIGATE */
+        /* ------------------ */
+        /* SMALL NAVIGATE */
+        .small-screen-navigate {
+            display: block;
         }
 
-        .navigate-item>ul>li>a.menu-title {
-            color: #06816d;
-        }
-
-        .navigate-item>ul>li>a.menu-title:hover {
-            color: #06816d;
-        }
-
-        .list-menu>li>a {
-            transition: padding-left 0.5s;
-        }
-
-        .list-menu>li>a:hover {
-            padding-left: 1.5em;
-            font-weight: bold;
-        }
-
-        .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
-            /* to get more detail 
-               1. inspect element
-               2. find the dropdown arrow
-               3. see detailed css property
-
-               note: to change the color just change the border color
-            */
-            border-color: #06816d rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-        }
-
-        /* End Navigation Items */
-
-        /* ---------------------------------------- */
-
-        /* Search Bar Jobs | <input> -> #search-bar */
-        #search-bar {
-            border: 1px solid red;
-            /* default to => [none] */
-            box-shadow: none;
-            background-image: url('/xbcvbx/svg/search-alt-2-svgrepo-com.svg');
-            background-repeat: no-repeat;
-            background-position: 5px center;
-            background-color: transparent;
-
-            padding-left: 2em;
-
-            font-weight: bold;
-        }
-
-        #search-bar::placeholder {
+        .small-navigate a {
             font-size: small;
         }
 
-        #search-bar:focus {
-            color: #06816d;
+        .small-navigate>ul {
+            display: flex;
+            /* no-gap */
         }
 
-        /* End; */
+        .small-navigate>ul>li .small-navigate-text {
+            padding: 1em 0.5em;
+            font-size: small;
+        }
 
+        /* END SMALL NAVIGATE */
+        /* ------------------ */
+        /* NAVIGATION CONTAINER */
+        .top-navigate {
+            display: flex;
+            justify-content: space-between;
+
+            /* no-padding */
+        }
+
+        /* END NAVIGATION CONTAINER */
         /* ------------------------ */
+        /* OFF-CANVAS */
+        .off-canvas-container>#more-filter-off-canvas {
+            width: 12.5em;
+            padding-left: 1em !important;
+        }
 
-        /* Navigation :before Icons */
+        .off-canvas-header {
+            padding-left: 0em !important;
+            font-size: small !important;
+        }
+
+        .off-canvas-filter-form {
+            font-size: small;
+        }
+
+        /* END OFF-CANVAS */
+
+        /* Navigation ::before Icons */
         #work-location::before {
-            content: url('/xbcvbx/svg/location-sign-svgrepo-com.svg');
-            position: absolute;
-            top: 0.5em;
-            left: -1em;
+            content: none !important;
         }
 
         #work-experience::before {
-            content: url('/xbcvbx/svg/userlane-svgrepo-com.svg');
-            position: absolute;
-            top: 0.5em;
-            left: -1em;
+            content: none !important;
         }
 
         #work-salary::before {
-            content: url('/xbcvbx/svg/deposit-money-bank-salary-saving-phone-currency-svgrepo-com.svg');
-            position: absolute;
-            top: 0.5em;
-            left: -1em;
+            content: none !important;
         }
 
         #work-salary-range::before {
-            content: url('/xbcvbx/svg/indonesian-rupiah-indonesian-rupiah-currency-indonesia-money-svgrepo-com.svg');
-            position: absolute;
-            top: 0.5em;
-            left: -1em;
+            content: none !important;
         }
 
         /* End; */
+    }
 
-        /* ----------------------- */
+    /* Medium and up */
+    @media screen and (min-width: 40em) {}
 
-        /* Small Screen Navigation */
-        .small-screen-navigate a {
-            color: #06816d !important;
+    /* Medium only */
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+        /* SMALL NAVIGATE */
+        .small-screen-navigate {
+            display: block;
         }
 
-        .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right>a::after {
-            /* selector refer to an arrow icon of -> [.small-navigate-text]
+        /* END SMALL NAVIGATE */
+        /* ================== */
+        /* LARGE NAVIGATE */
+        .large-screen-navigate {}
+
+        .navigate-item {
+            display: none;
+        }
+
+        /* END LARGE NAVIGATE */
+
+        .top-navigate {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 0em 2.5em;
+        }
+
+        .small-navigate>ul {
+            display: flex;
+            justify-content: end;
+            gap: 2em;
+        }
+
+        .small-navigate li>a {
+            font-size: smaller;
+        }
+
+        /* Navigation ::before Icons */
+        #work-location::before {
+            content: none !important;
+        }
+
+        #work-experience::before {
+            content: none !important;
+        }
+
+        #work-salary::before {
+            content: none !important;
+        }
+
+        #work-salary-range::before {
+            content: none !important;
+        }
+
+        /* End; */
+    }
+
+    /* Large and up */
+    @media screen and (min-width: 64em) {
+        .navigate-item>ul>li>a.menu-title {
+            width: 12.5em;
+        }
+    }
+
+    /* Large only */
+    @media screen and (min-width: 64em) and (max-width: 74.9375em) {
+
+        /* SMALL NAVIGATE */
+        .small-screen-navigate {
+            display: none;
+        }
+
+        /* END SMALL NAVIGATE */
+        /* ================== */
+        /* LARGE NAVIGATE */
+        .large-screen-navigate .menu-title {
+            font-size: small;
+        }
+
+        /* END LARGE NAVIGATE */
+    }
+
+    /* X-Large up */
+    @media screen and (min-width: 75em) {
+
+        /* LARGE NAVIGATE */
+        .large-screen-navigate .menu-title {
+            font-size: medium;
+        }
+
+        /* END LARGE NAVIGATE */
+        /* ================== */
+        /* SMALL NAVIGATE */
+        .small-screen-navigate {
+            display: none;
+        }
+
+        /* END SMALL NAVIGATE */
+    }
+
+    /* END FOUNDATION MEDIA SCREEN */
+    /* --------------------------- */
+
+    /* GENERAL STYLE */
+    /* Navigation Container */
+    nav.top-navigate {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+
+        /* position: sticky;
+            position: -webkit-sticky;
+            top: 0; */
+
+        background-color: #fbfaf8;
+    }
+
+    /* End; */
+
+    /* ---------------- */
+
+    /* Navigation Items */
+    .navigate-item {}
+
+    .navigate-item a {
+        color: #06816d !important;
+    }
+
+    .navigate-item>ul>li>a.menu-title {
+        color: #06816d;
+    }
+
+    .navigate-item>ul>li>a.menu-title:hover {
+        color: #06816d;
+    }
+
+    .list-menu>li>a {
+        transition: padding-left 0.5s;
+    }
+
+    .list-menu>li>a:hover {
+        padding-left: 1.5em;
+        font-weight: bold;
+    }
+
+    .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
+        /* to get more detail 
+               1. inspect element
+               2. find the dropdown arrow
+               3. see detailed css property
+
+               note: to change the color just change the border color
+            */
+        border-color: #06816d rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
+
+    /* End Navigation Items */
+
+    /* ---------------------------------------- */
+
+    /* Search Bar Jobs | <input> -> #search-bar */
+    #search-bar {
+        border: none;
+        box-shadow: none;
+        background-image: url('/xbcvbx/svg/search-alt-2-svgrepo-com.svg');
+        background-repeat: no-repeat;
+        background-position: 5px center;
+        background-color: transparent;
+
+        padding-left: 2em;
+
+        font-weight: bold;
+    }
+
+    #search-bar::placeholder {
+        font-size: small;
+    }
+
+    #search-bar:focus {
+        color: #06816d;
+    }
+
+    /* End; */
+
+    /* ------------------------ */
+
+    /* Navigation :before Icons */
+    #work-location::before {
+        content: url('/xbcvbx/svg/location-sign-svgrepo-com.svg');
+        position: absolute;
+        top: 0.5em;
+        left: -1em;
+    }
+
+    #work-experience::before {
+        content: url('/xbcvbx/svg/userlane-svgrepo-com.svg');
+        position: absolute;
+        top: 0.5em;
+        left: -1em;
+    }
+
+    #work-salary::before {
+        content: url('/xbcvbx/svg/deposit-money-bank-salary-saving-phone-currency-svgrepo-com.svg');
+        position: absolute;
+        top: 0.5em;
+        left: -1em;
+    }
+
+    #work-salary-range::before {
+        content: url('/xbcvbx/svg/indonesian-rupiah-indonesian-rupiah-currency-indonesia-money-svgrepo-com.svg');
+        position: absolute;
+        top: 0.5em;
+        left: -1em;
+    }
+
+    /* End; */
+
+    /* ----------------------- */
+
+    /* Small Screen Navigation */
+    .small-screen-navigate a {
+        color: #06816d !important;
+    }
+
+    .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right>a::after {
+        /* selector refer to an arrow icon of -> [.small-navigate-text]
                to get more detail 
                1. inspect element
                2. find the dropdown arrow
@@ -282,11 +317,11 @@
 
                note: to change the color just change the border color
             */
-            border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #06816d;
-        }
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #06816d;
+    }
 
-        .is-dropdown-submenu .is-dropdown-submenu-parent.opens-left>a::after {
-            /* selector refer to an arrow icon of -> [.small-navigate-text>ul>li>a[e.g "Work Location"]]
+    .is-dropdown-submenu .is-dropdown-submenu-parent.opens-left>a::after {
+        /* selector refer to an arrow icon of -> [.small-navigate-text>ul>li>a[e.g "Work Location"]]
                to get more detail 
                1. inspect element
                2. find the dropdown arrow
@@ -294,12 +329,12 @@
 
                note: to change the color just change the border color
             */
-            border-color: rgba(0, 0, 0, 0) #06816d rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-            ;
-        }
+        border-color: rgba(0, 0, 0, 0) #06816d rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+        ;
+    }
 
-        .menu .is-active>a {
-            /* selector refer to background-color of -> [.small-navigate-text+ul.menu]
+    .menu .is-active>a {
+        /* selector refer to background-color of -> [.small-navigate-text+ul.menu]
                to get more detail 
                1. inspect element
                2. find the dropdown arrow
@@ -307,181 +342,104 @@
 
                note: to change the color just change the border color
             */
-            font-weight: bold;
+        font-weight: bold;
 
-            background-color: white;
-        }
+        background-color: white;
+    }
 
-        /* End; */
+    /* End; */
 
-        /* --------------------- */
+    /* --------------------- */
 
-        /* Off Canvas Navigation */
-        .off-canvas-container>#more-filter-off-canvas {
-            padding-left: 2em;
-        }
+    /* Off Canvas Navigation */
+    .off-canvas-container>#more-filter-off-canvas {
+        padding-left: 2em;
+    }
 
-        .off-canvas-container .off-canvas-header {
-            padding-top: 0.7em;
+    .off-canvas-container .off-canvas-header {
+        padding-top: 0.7em;
 
-            font-size: large;
-            font-weight: bold;
-        }
+        font-size: large;
+        font-weight: bold;
+    }
 
-        /* End; */
-        /* END GENERAL STYLE */
-    </style>
-    <!-- make this navigation sticky -->
-    <nav class="top-navigate" id="nav-bar" style="border: 1px solid red;">
-        <!-- Large Screen Navigation -->
-        <ul class="menu large-screen-navigate grid-x align-spaced">
-            <li class="search-box-jobs">
-                <!-- Search Form -->
-                <form action="" method="">
-                    <div class="form-input">
-                        <!-- change to use icon instead, then styling inside input form -->
-                        <!-- <label for="">Search</label> -->
-                        <input class="" type="text" placeholder="Search Jobs" id="search-bar" autocomplete="off">
-                    </div>
-                </form>
-            </li>
-            <!-- FROM => ./navigation.items.ejs -->
-            <li class="navigate-item">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li class="is-dropdown-submenu-parent">
-                        <a class="menu-title" href="" id="work-location">
-                            Work Location
-                        </a>
-                        <ul class="menu list-menu">
-                            <li><a href="">Surabaya</a></li>
-                            <li><a href="">Jakarta</a></li>
-                            <li><a href="">Bandung</a></li>
-                            <li><a href="">DI Yogyakarta</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li class="navigate-item">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li class="is-dropdown-submenu-parent">
-                        <a class="menu-title" href="" id="work-experience">
-                            Experience
-                        </a>
-                        <ul class="menu list-menu">
-                            <li><a href="">Less than a year</a></li>
-                            <li><a href="">More than a year</a></li>
-                            <li><a href="">More than five years</a></li>
-                            <li><a href="">More than ten years</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li class="navigate-item">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li class="is-dropdown-submenu-parent">
-                        <a class="menu-title" href="" id="work-salary">
-                            Per Month
-                        </a>
-                        <ul class="menu list-menu">
-                            <li><a href="">Per Month</a></li>
-                            <li><a href="">Per Week</a></li>
-                            <li><a href="">Per Year</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li class="navigate-item">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li class="is-dropdown-submenu-parent">
-                        <a class="menu-title" href="" id="work-salary-range">
-                            Salary Range
-                        </a>
-                        <ul class="menu list-menu">
-                            <li><a href="">
-                                    < 5M Rupiah</a>
-                            </li>
-                            <li><a href="">> 5M Rupiah</a></li>
-                            <li><a href="">> 10M Rupiah</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <!-- Small Screen Navigation -->
-        <div class="small-screen-navigate flex-container align-middle">
-            <!-- this element should nested the main navigation -->
-            <div class="small-navigate">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li class="quick-filter is-dropdown-submenu-parent">
-                        <a class="small-navigate-text" href="">Quick Filter</a>
-                        <ul class="menu list-menu">
-                            <li>
-                                <a href="">Work Location</a>
-                                <ul class="menu list-menu">
-                                    <li><a href="">Surabaya</a></li>
-                                    <li><a href="">Jakarta</a></li>
-                                    <li><a href="">Bandung</a></li>
-                                    <li><a href="">DI Yogyakarta</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="">Experience</a>
-                                <ul class="menu list-menu">
-                                    <li><a href="">Less than a year</a></li>
-                                    <li><a href="">More than a year</a></li>
-                                    <li><a href="">More than five years</a></li>
-                                    <li><a href="">More than ten years</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="">Base Salary</a>
-                                <ul class="menu list-menu">
-                                    <li><a href="">Per Month</a></li>
-                                    <li><a href="">Per Week</a></li>
-                                    <li><a href="">Per Year</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="">Salary Range</a>
-                                <ul class="menu list-menu">
-                                    <li><a href="">
-                                            < 5M Rupiah</a>
-                                    </li>
-                                    <li><a href="">> 5M Rupiah</a></li>
-                                    <li><a href="">> 10M Rupiah</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="more-filter">
-                        <a type="button" class="small-navigate-text button clear"
-                            data-toggle="more-filter-off-canvas">More
-                            Filters</a>
-                    </li>
-                </ul>
+    /* End; */
+    /* END GENERAL STYLE */
+</style>
+<nav class="top-navigate" id="nav-bar">
+    <!-- Large Screen Navigation -->
+    <ul class="menu large-screen-navigate grid-x align-spaced">
+        <li class="search-box-jobs">
+            <!-- Search Form -->
+            <form action="" method="">
+                <div class="form-input">
+                    <!-- change to use icon instead, then styling inside input form -->
+                    <!-- <label for="">Search</label> -->
+                    <input class="" type="text" placeholder="Search Jobs" id="search-bar" autocomplete="off">
+                </div>
+            </form>
+        </li>
+        <!-- navigation item -->
+        <li class="navigate-item">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <?- include('navigation_items/work_locations') ?>
+            </ul>
+        </li>
+        <li class="navigate-item">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <?- include('navigation_items/work_experiences') ?>
+            </ul>
+        </li>
+        <li class="navigate-item">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <?- include('navigation_items/work_base_salary') ?>
+            </ul>
+        </li>
+        <li class="navigate-item">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <?- include('navigation_items/work_salary_range') ?>
+            </ul>
+        </li>
+    </ul>
+    <!-- Small Screen Navigation -->
+    <div class="small-screen-navigate flex-container align-middle">
+        <!-- this element should nested the main navigation -->
+        <div class="small-navigate">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="quick-filter is-dropdown-submenu-parent">
+                    <a class="small-navigate-text" href="">Quick Filter</a>
+                    <ul class="menu list-menu" id="quick-filter-items">
+                        <?- include('navigation_items/work_locations') ?>
+                        <?- include('navigation_items/work_experiences') ?>
+                        <?- include('navigation_items/work_base_salary') ?>
+                        <?- include('navigation_items/work_salary_range') ?>
+                    </ul>
+                </li>
+                <li class="more-filter">
+                    <a type="button" class="small-navigate-text button clear" data-toggle="more-filter-off-canvas">More
+                        Filters</a>
+                </li>
+            </ul>
+        </div>
+        <!-- off canvas for small navigate -->
+        <div class="off-canvas-container off-canvas-wrapper">
+            <!-- change off-canvas background here -->
+            <div class="off-canvas position-left grid-frame" id="more-filter-off-canvas" data-off-canvas>
+                <!-- OFF CANVAS HEADER -->
+                <div class="off-canvas-header">
+                    <span>Details</span>
+                    <!-- CLOSE BUTTON -->
+                    <button type="button" class="small close-button border-none" aria-label="Close menu" data-close>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- NAVIGATE ITEM -->
+                <!--  -->
+                <div class="off-canvas-filter-form grid-y" id="small-filter-items-container"></div>
             </div>
-            <!-- off canvas for small navigate -->
-            <div class="off-canvas-container off-canvas-wrapper">
-                <!-- change off-canvas background here -->
-                <div class="off-canvas position-left grid-frame" id="more-filter-off-canvas" data-off-canvas>
-                    <!-- OFF CANVAS HEADER -->
-                    <div class="off-canvas-header">
-                        <span>Details</span>
-                        <!-- CLOSE BUTTON -->
-                        <button type="button" class="small close-button border-none" aria-label="Close menu" data-close>
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <!-- NAVIGATE ITEM -->
-                    <div class="off-canvas-filter-form grid-y">
-                        <div class="" style="height: auto;">
-                            <%- include('sidebar.filter.items.ejs') %>
-                        </div>
-                    </div>
-                </div>
-                <div class="off-canvas-content" data-off-canvas-content>
-                    <!-- no-content-yet -->
-                </div>
+            <div class="off-canvas-content" data-off-canvas-content>
+                <!-- no-content-yet -->
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
