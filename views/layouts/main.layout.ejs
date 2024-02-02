@@ -27,6 +27,18 @@
         @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
 
         /* END FOUNDATION MEDIA SCREEN */
+
+        .content>.divider {
+            height: 2em;
+
+            margin: 1em;
+
+            border-radius: 0.4em;
+            /* border: 1px solid red; */
+            border: none;
+
+            background-color: #f8f5ee;
+        }
     </style>
 </head>
 
@@ -44,12 +56,18 @@
             </div>
             <div class="cell content large-9">
                 <?- defineContent('content') ?>
+                <div class="divider">
+                    <!-- Empty Content -->
+                </div>
+                <?- defineContent('footer') ?>
             </div>
         </div>
     </main>
+    <div class="footer-space">
+    </div>
     <!-- FOOTER -->
     <footer>
-
+        <!-- Empty Footer -->
     </footer>
     <!-- foundation => css with protoype: true; & js bundle -->
     <script src="/xbcvbx/webpack/foundation.webpack.js"></script>

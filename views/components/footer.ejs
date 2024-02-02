@@ -1,0 +1,107 @@
+<?- contentFor('footer') ?>
+<style>
+    /* Foundation Media Queries */
+    /* Small only */
+    @media screen and (max-width: 39.9375em) {}
+
+    /* Medium and up */
+    @media screen and (min-width: 40em) {}
+
+    /* Medium only */
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+    /* Large and up */
+    @media screen and (min-width: 64em) {}
+
+    /* Large only */
+    @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+    /* End Foundation */
+
+    /* -------------- */
+
+    /* General Styles */
+    .footer-container {
+        height: auto;
+
+        padding-top: 1.5em;
+        padding-bottom: 0.5em;
+
+        background-image: url('/xbcvbx/images/footer-bg.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .startup-logo>img {
+        width: 10em;
+    }
+
+    .startup-slogan>span>strong {
+        font-size: x-large;
+
+        letter-spacing: 0.03em;
+
+        color: gray;
+    }
+
+    .social-media {
+        width: 1.5em;
+
+        margin: 0 0.5em;
+    }
+
+    .divider {
+        border: 1px solid #06816d;
+    }
+
+    .copyright-text {
+        margin-top: 0.5em;
+
+        font-size: small;
+    }
+
+    .copyright-text>span>strong {
+        color: #06816d;
+    }
+
+    /* End; */
+</style>
+<div class="footer-container grid-container full">
+    <div class="startup-logo card-image text-center">
+        <img src="/xbcvbx/images/sidokaredev-footer-logos.png" alt="">
+    </div>
+    <!-- <div class="startup-logo-container" style="border: 1px solid blue;">
+    </div> -->
+    <div class="startup-slogan text-center margin-top-2">
+        <span><strong>We Move Differently</strong></span>
+    </div>
+    <div class="social-media-account flex-container align-center margin-top-1">
+        <div class="social-media card-image">
+            <a href="">
+                <img src="/xbcvbx/svg/linkedin-svgrepo-com.svg" alt="">
+            </a>
+        </div>
+        <div class="social-media card-image">
+            <a href="">
+                <img src="/xbcvbx/svg/instagram-svgrepo-com.svg" alt="">
+            </a>
+        </div>
+        <div class="social-media card-image">
+            <a href="">
+                <img src="/xbcvbx/svg/brand-tiktok-sq-svgrepo-com.svg" alt="">
+            </a>
+        </div>
+        <div class="social-media card-image">
+            <a href="">
+                <img src="/xbcvbx/svg/youtube-168-svgrepo-com.svg" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="flex-container align-center">
+        <div class="divider rounded margin-top-3" style="width: 40%;"></div>
+    </div>
+    <div class="copyright-text text-center">
+        <span>© 2024 - 2024 <strong>sidokaredev</strong> - All Rights Reserved.</span>
+    </div>
+</div>
