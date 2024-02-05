@@ -2,10 +2,66 @@
 <style>
     /* Foundation Media Queries */
     /* Small only */
-    @media screen and (max-width: 39.9375em) {}
+    @media screen and (max-width: 39.9375em) {
+        .startup-logo>img {
+            width: 7em;
+        }
+
+        .startup-slogan>span>strong {
+            font-size: medium;
+
+            letter-spacing: 0.03em;
+
+            color: gray;
+        }
+
+        .social-media {
+            width: 1.2em;
+
+            margin: 0 0.5em;
+
+            transition: margin-top 0.5s;
+        }
+
+        .divider {
+            margin-top: 1em !important;
+        }
+
+        .copyright-text {
+            margin-top: 0.5em;
+
+            font-size: xx-small;
+        }
+    }
 
     /* Medium and up */
-    @media screen and (min-width: 40em) {}
+    @media screen and (min-width: 40em) {
+        .startup-logo>img {
+            width: 10em;
+        }
+
+        .startup-slogan>span>strong {
+            font-size: x-large;
+
+            letter-spacing: 0.03em;
+
+            color: gray;
+        }
+
+        .social-media {
+            width: 1.5em;
+
+            margin: 0 0.5em;
+
+            transition: margin-top 0.5s;
+        }
+
+        .copyright-text {
+            margin-top: 0.5em;
+
+            font-size: small;
+        }
+    }
 
     /* Medium only */
     @media screen and (min-width: 40em) and (max-width: 63.9375em) {}
@@ -33,32 +89,12 @@
         background-size: cover;
     }
 
-    .startup-logo>img {
-        width: 10em;
-    }
-
-    .startup-slogan>span>strong {
-        font-size: x-large;
-
-        letter-spacing: 0.03em;
-
-        color: gray;
-    }
-
-    .social-media {
-        width: 1.5em;
-
-        margin: 0 0.5em;
+    .social-media:hover {
+        margin-top: -0.2em;
     }
 
     .divider {
         border: 1px solid #06816d;
-    }
-
-    .copyright-text {
-        margin-top: 0.5em;
-
-        font-size: small;
     }
 
     .copyright-text>span>strong {

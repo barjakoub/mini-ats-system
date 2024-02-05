@@ -1,0 +1,542 @@
+<?- include('../components/navigation') ?>
+<?- include('../components/sidebar') ?>
+<?- include('../components/footer') ?>
+<?- contentFor('content') ?>
+<style>
+    /* Foundation Media Queries */
+    /* Small only */
+    @media screen and (max-width: 39.9375em) {
+        .job-detail-action {
+            display: flex;
+
+            margin-top: 0.5em;
+        }
+
+        .job-detail-action>button {
+            margin: 0em 0.3em;
+            padding: 0.7em 1.2em;
+
+            border-radius: 0.5em;
+        }
+
+        .apply-button {
+            flex-grow: 1;
+        }
+
+        /* Job Detail Company */
+        .company-name-location {
+            flex-direction: column;
+            /* justify-content: start; */
+        }
+
+        /* Title Divider */
+        span.title-divider {
+            display: none;
+        }
+
+        /* Similar Job */
+        .similar-job-item-container {
+            display: grid;
+            gap: 0.5em;
+            grid-template-columns: auto;
+
+            margin-top: 1em;
+        }
+    }
+
+    /* Medium and up */
+    @media screen and (min-width: 40em) {
+        .job-detail-title {
+            display: grid;
+            grid-template-columns: 10fr 4fr;
+        }
+
+        .job-detail-action>button {
+            padding: 0.5em 1em;
+
+            border-radius: 0.5em;
+        }
+
+        /* Job Company Detail */
+        .company-name-location {
+            display: flex;
+
+            align-items: center;
+        }
+
+        /* Title Divider */
+        span.title-divider {
+            display: block;
+            width: 4px;
+            height: 4px;
+
+            margin: 0 0.5em;
+
+            border-radius: 10px;
+
+            background-color: #056454;
+        }
+
+        /* Similar Job */
+        .similar-job-item-container {
+            display: grid;
+            gap: 0.5em;
+            grid-template-columns: auto auto;
+
+            margin-top: 1em;
+        }
+    }
+
+    /* Medium only */
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+    /* Large and up */
+    @media screen and (min-width: 64em) {
+        .job-detail-title {
+            display: grid;
+            grid-template-columns: 10fr 4fr;
+        }
+
+        .job-detail-action>button {
+            padding: 0.7em 1.2em;
+
+            border-radius: 0.5em;
+        }
+
+        .job-detail-action>button>svg {
+            width: 13px;
+            height: 13px;
+        }
+    }
+
+    /* Large only */
+    @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+    /* X-Large up */
+    @media screen and (min-width: 75em) {}
+
+    /* Job Detail Title */
+    .job-detail-title {
+        margin-top: 2em;
+    }
+
+    .job-detail-position>span {
+        font-weight: bolder;
+        font-size: medium;
+    }
+
+    .job-detail-action>button {
+        border: none !important;
+    }
+
+    .job-detail-action>button.apply-button {
+        background-color: #06816d !important;
+    }
+
+    .job-detail-action>button.apply-button:hover {
+        background-color: #056454 !important;
+    }
+
+    .job-detail-action>button.share-button>svg g>g,
+    .job-detail-action>button.bookmark-button>svg g>g {
+        fill: gray;
+    }
+
+    .job-detail-action>button.share-button:hover>svg g>g,
+    .job-detail-action>button.bookmark-button:hover>svg g>g {
+        fill: #0080ff;
+    }
+
+    .job-detail-action>button.share-button {
+        transition: margin-top 0.3s;
+    }
+
+    .job-detail-action>button.share-button:hover {
+        margin-top: -1em;
+    }
+
+    /* Job Detail Company */
+    .job-detail-company {
+        margin-top: 0.5em;
+    }
+
+    .company-logos {
+        width: 5em;
+
+        flex-basis: auto;
+
+        border-radius: 0.5em;
+    }
+
+    .company-name-location-category {
+        /* from parent */
+        flex-grow: 1;
+        /* self */
+        padding-left: 0.5em;
+    }
+
+    .company-name {
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    .company-location {
+        font-size: small;
+
+        color: gray;
+    }
+
+    .company-category {
+        margin-top: 0.5em;
+    }
+
+    /* Job Detail Information */
+    .job-detail-information {
+        margin-top: 1em;
+    }
+
+    .job-detail-information .title {
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    .job-detail-information .text {
+        margin-top: 0.5em;
+        color: gray;
+    }
+
+    /* Similar Job */
+    .similar-job-container {
+        margin-top: 1em;
+    }
+
+    .similar-job-title>span {
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    .similar-job-item {
+        padding: 0.5em;
+
+        border-radius: 0.3em;
+
+        background-color: #faf6f5;
+    }
+
+    .similar-job-company-detail {
+        display: flex;
+    }
+
+
+    .similar-company-logos {
+        width: 3em;
+    }
+
+    .similar-job-role-company-location {
+        /* parent */
+        flex-grow: 1;
+        /* self */
+        padding-left: 1em;
+        font-size: small;
+    }
+
+    .similar-job-role {
+        font-weight: bold;
+    }
+
+    .similar-job-company {
+        font-weight: bold;
+        font-size: small;
+
+        color: #06816d;
+    }
+
+    .similar-job-location>span {
+        font-size: x-small;
+    }
+
+    .similar-job-bookmark>button {
+        padding: 0.5em;
+
+        border-radius: 0.3em;
+        border: 1px solid gray;
+
+        background-color: transparent !important;
+    }
+
+    .similar-job-bookmark>button>svg g>g {
+        fill: gray;
+    }
+
+    .similar-job-bookmark>button:hover {
+        border-color: #0080ff;
+    }
+
+    .similar-job-bookmark>button:hover>svg g>g {
+        fill: #0080ff;
+    }
+
+    .similar-job-category>span.label {
+        font-size: xx-small;
+    }
+
+    .similar-job-current-info {
+        display: flex;
+        justify-content: space-between;
+
+        margin-top: 1em;
+        font-size: small;
+
+        color: gray;
+    }
+
+
+    /* General Button for Similar Job */
+    .similar-item-action>button {
+        margin-bottom: 0em;
+        padding: 0.5em 1em;
+
+        border-radius: 0.5em;
+
+        background-color: transparent !important;
+    }
+
+    button.prev-similar-job>svg {
+        fill: gray;
+    }
+
+    button.prev-similar-job:hover {
+        background-color: #f8f5ee !important;
+    }
+
+    button.next-similar-job>svg {
+        fill: #06816d;
+    }
+
+    button.next-similar-job:hover>svg {
+        fill: white;
+    }
+
+    button.next-similar-job:hover {
+        background-color: #056454 !important;
+    }
+
+    /* General Divider */
+    span.divider {
+        display: block;
+        border: 1px solid #056454;
+    }
+</style>
+<div class="grid-container full padding-2">
+    <section class="job-detail-container">
+        <div class="breadcrumbs-container">
+            <ul class="breadcrumbs" style="margin-bottom: 0em;">
+                <li><a href="">Home</a></li>
+                <li><a href="">Jobs</a></li>
+                <li><a class="disabled" href="">Detail</a></li>
+            </ul>
+        </div>
+        <div class="job-detail-title">
+            <div class="job-detail-position">
+                <span>
+                    UX Researcher and UI Builder Expertise
+                </span>
+            </div>
+            <div class="job-detail-action text-right">
+                <button class="button small apply-button">Apply Now</button>
+                <button class="button small hollow share-button">
+                    <svg width="12px" height="12px" viewBox="-1 0 26 26" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+
+                        <title>share</title>
+                        <desc>Created with Sketch Beta.</desc>
+                        <defs>
+
+                        </defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                            sketch:type="MSPage">
+                            <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                transform="translate(-314.000000, -728.000000)" fill="#000000">
+                                <path
+                                    d="M333,744 C331.23,744 329.685,744.925 328.796,746.312 L323.441,743.252 C323.787,742.572 324,741.814 324,741 C324,740.497 323.903,740.021 323.765,739.563 L329.336,736.38 C330.249,737.37 331.547,738 333,738 C335.762,738 338,735.762 338,733 C338,730.238 335.762,728 333,728 C330.238,728 328,730.238 328,733 C328,733.503 328.097,733.979 328.235,734.438 L322.664,737.62 C321.751,736.631 320.453,736 319,736 C316.238,736 314,738.238 314,741 C314,743.762 316.238,746 319,746 C320.14,746 321.179,745.604 322.02,744.962 L328.055,748.46 C328.035,748.64 328,748.814 328,749 C328,751.762 330.238,754 333,754 C335.762,754 338,751.762 338,749 C338,746.238 335.762,744 333,744"
+                                    id="share" sketch:type="MSShapeGroup">
+
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+                <button class="button small hollow bookmark-button">
+                    <svg width="12px" height="12px" viewBox="-4 0 30 30" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+
+                        <title>bookmark</title>
+                        <desc>Created with Sketch Beta.</desc>
+                        <defs>
+
+                        </defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                            sketch:type="MSPage">
+                            <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                transform="translate(-419.000000, -153.000000)" fill="#000000">
+                                <path
+                                    d="M437,153 L423,153 C420.791,153 419,154.791 419,157 L419,179 C419,181.209 420.791,183 423,183 L430,176 L437,183 C439.209,183 441,181.209 441,179 L441,157 C441,154.791 439.209,153 437,153"
+                                    id="bookmark" sketch:type="MSShapeGroup">
+
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="job-detail-company flex-container">
+            <div class="company-logos card-image">
+                <img src="/xbcvbx/images/forbes-logo-svgrepo-com.svg" alt="">
+            </div>
+            <div class="company-name-location-category">
+                <div class="company-name-location">
+                    <div class="company-name">
+                        <span>
+                            Forbes
+                        </span>
+                    </div>
+                    <span class="title-divider"></span>
+                    <div class="company-location">
+                        <svg fill="#A9A9A9" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="10px" height="10px"
+                            viewBox="0 0 395.71 395.71" xml:space="preserve">
+                            <g>
+                                <path
+                                    d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738
+                                                                c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388
+                                                                C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191
+                                                                c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+                            </g>
+                        </svg>
+                        <span>
+                            Sidoarjo, Jawa Timur, Indonesia
+                        </span>
+                    </div>
+                </div>
+                <div class="company-category">
+                    <span class="label project-work">Project Work</span>
+                    <span class="label internship">Intership</span>
+                </div>
+            </div>
+        </div>
+        <div class="job-detail-information">
+            <div class="role-description">
+                <div class="title">
+                    <span>
+                        About this role
+                    </span>
+                </div>
+                <div class="text">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit distinctio ipsa ullam, facere
+                        aperiam totam fuga dolorem doloribus architecto ab quae earum corrupti asperiores eum dolor sed
+                        assumenda similique nihil harum dolorum? Quam accusamus corporis harum perferendis omnis, iusto
+                        tempora sed. Commodi ratione mollitia minus id quasi necessitatibus beatae in!
+                    </p>
+                </div>
+            </div>
+            <div class="role-qualification">
+                <div class="title">
+                    <span>
+                        Qualification
+                    </span>
+                </div>
+                <div class="text">
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nulla odio nostrum iure?
+                        </li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat?</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, eius obcaecati.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="role-responsibility">
+                <div class="title">
+                    <span>
+                        Responsibility
+                    </span>
+                </div>
+                <div class="text">
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quisquam debitis sunt
+                            consequatur id!</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum soluta, omnis aut aliquam
+                            nemo veniam dolor cupiditate nihil id tempora.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio impedit debitis dolore minus
+                            adipisci.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="role-attachment">
+                <div class="title">
+                    <span>
+                        Attachment
+                    </span>
+                </div>
+                <div class="document-attached">
+                    <span>Dokumen Here ...</span>
+                    <br>
+                    <span>Please display attached media with a preview on card element</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <span class="divider"></span>
+    <section class="similar-job-container">
+        <div class="similar-job-title">
+            <span>
+                Similar Jobs
+            </span>
+        </div>
+        <div class="similar-job-item-container">
+            <?- include('../components/similar.job.item.ejs') ?>
+            <?- include('../components/similar.job.item.ejs') ?>
+            <?- include('../components/similar.job.item.ejs') ?>
+            <?- include('../components/similar.job.item.ejs') ?>
+        </div>
+        <div class="similar-item-action flex-container align-center margin-top-1">
+            <button class="prev-similar-job button">
+                <svg fill="#000000" height="15px" width="15px" version="1.1" id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"
+                    xml:space="preserve">
+                    <g>
+                        <g>
+                            <g>
+                                <path d="M256,0C114.618,0,0,114.618,0,256s114.618,256,256,256s256-114.618,256-256S397.382,0,256,0z M256,469.333
+                				c-117.818,0-213.333-95.515-213.333-213.333S138.182,42.667,256,42.667S469.333,138.182,469.333,256S373.818,469.333,256,469.333
+                				z" />
+                                <path d="M313.752,134.248c-8.331-8.331-21.839-8.331-30.17,0L176.915,240.915c-8.331,8.331-8.331,21.839,0,30.17l106.667,106.667
+                				c8.331,8.331,21.839,8.331,30.17,0c8.331-8.331,8.331-21.839,0-30.17L222.17,256l91.582-91.582
+                				C322.083,156.087,322.083,142.58,313.752,134.248z" />
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <button class="next-similar-job button">
+                <svg fill="#000000" height="15px" width="15px" version="1.1" id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300"
+                    xml:space="preserve">
+                    <g>
+                        <g>
+                            <path d="M150,0C67.157,0,0,67.157,0,150c0,82.841,67.157,150,150,150s150-67.159,150-150C300,67.157,232.843,0,150,0z
+			 M195.708,160.159c-0.731,0.731-1.533,1.349-2.368,1.886l-56.295,56.295c-2.734,2.736-6.318,4.103-9.902,4.103
+			s-7.166-1.367-9.902-4.103c-5.47-5.47-5.47-14.34,0-19.808l48.509-48.516l-48.265-48.265c-5.47-5.473-5.47-14.34,0-19.808
+			c5.47-5.47,14.338-5.467,19.808-0.003l56.046,56.043c0.835,0.537,1.637,1.154,2.365,1.886c2.796,2.796,4.145,6.479,4.082,10.146
+			C199.852,153.68,198.506,157.361,195.708,160.159z" />
+                        </g>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </section>
+</div>
